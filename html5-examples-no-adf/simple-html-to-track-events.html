@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>HTML Page with single Input Element</title>
+    <script>
+        // set the input element that is the target of the event passed in to a static value 
+        function trackEvent(event) {
+           var component = event.target;
+           var eventType = event.type;
+           console.log("Event of type "+eventType+" on component "+component.id)
+        }
+
+        var eventTypes = ["focus","blur","copy","paste","change","keydown","keyup", "select","auxclick","contextmenu"];
+
+        // called to dynamically add listeners to selected elements in documents
+        // typically called right after the document has loaded in the browser
+        function addListeners() {
+            var el = document.getElementById("theField");
+            for (var i=0;i< eventTypes.length; i++){
+              el.addEventListener(eventTypes[i], function(e){trackEvent(e)}, false);
+            }//for
+        }   
+
+        //to be called when entire document is loaded
+        function init() {
+            console.log("init document");
+            addListeners();
+        }
+        // add event listener to entire document to fire when document is loaded in browser
+        window.addEventListener('DOMContentLoaded', init, false);
+    </script>
+</head>
+
+<body>
+    <form>
+        <input id="theField" type="text" />
+    </form>
+</body>
+
+</html>

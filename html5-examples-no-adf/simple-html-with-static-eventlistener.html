@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>HTML Page with single Input Element</title>
+    <script>
+        function focusFunction(focusField) {           
+           focusField.value = "Welcome!";
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <input id="theField" type=text 
+        onfocus="focusFunction(this)"
+        onblur="this.value=this.value.toUpperCase()" />
+    </form>
+</body>
+
+</html>

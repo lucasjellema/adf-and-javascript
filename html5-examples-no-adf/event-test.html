@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<!--
+/**
+ * @package 8 Puzzle
+ * @subpackage HTML
+ * @author Yorick Phoenix <yphoenix@scribblings.com>
+ * @copyright Copyright (c) 2015 Yorick Phoenix, All Rights Reserved
+ */
+-->
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<meta name="Author" Content="Yorick Phoenix">
+		<title>jsEventTrace Demo</title>
+		<link rel="stylesheet" type="text/css" href="Demo.css"/>
+	</head>
+	<body>
+	<h4>Open the Developer Tools and display the console (cmd-opt-I, cmd-shift-I or F12)</h4>
+	<div id=leftBlock>
+		<form>
+			<label>Log Level:</label>
+			<select id="menu">
+				<option value=1>0</option>
+				<option value=1>1</option>
+				<option value=2 selected>2</option>
+				<option value=3>3</option>
+				<option value=4>4</option>
+				<option value=5>5</option>
+			</select>
+			<input id=screenlog type=checkbox checked=checked />Onscreen Log
+			<p>
+			<input type=checkbox value="a" />Check Box A
+			<input type=checkbox value="b" />Check Box B
+			<input type=checkbox value="c" />Check Box C
+			<input type=checkbox value="d" />Check Box D
+			<p>
+			<input type=radio value="a" name="rg" />Radio Button A
+			<input type=radio value="b" name="rg" />Radio Button B
+			<p>
+			<input type=button value="Button A" />
+			<input type=button value="Button B" />
+			<button type="button">Button C</button>
+			<button disabled=disabled>Disabled Button</button>
+			<p>
+			<input type=date />
+			<input type=time />
+			<p>
+			<input type=file />
+			<p>
+			<input type=text placeholder="plain text field" />
+			<input type=text readonly=readonly placeholder="readonly text field" />
+			<input type=password placeholder="enter password here" />
+			<input type=search placeholder="enter search string" />
+
+			<p>
+			<textarea>Some sample text</textarea>
+			<div id=editDiv contentEditable=true>Editable Div</div>
+			<div id=readonlyDiv readonly=readonly>readonly div</div>
+			<div id=disabledDiv disabled=disabled>disabled div</div>
+			<p>
+			<input type=range />
+			<p>
+			<input type=reset />
+			<button type="reset">Other Submit</button>
+			<p>
+			<input type=submit />
+			<button type="submit">Other Submit</button>
+		</form>
+	</div>
+	<div id=rightBlock>
+		<div id=mouseAround><p>Mouse Around In Here!</p></div>
+		<div id=results>
+			<pre>
+Client X: <span id=clientX></span> Y: <span id=clientY></span><br>
+Offset X: <span id=offsetX></span> Y: <span id=offsetY></span><br>
+Page X:   <span id=pageX></span> Y: <span id=pageY></span><br>
+Screen X: <span id=screenX></span> Y: <span id=screenY></span>
+			</pre>
+		</div>
+	</div>
+	<pre><div id=console></div></pre>
+	</body>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="jsEventTracer.js"></script>
+	<script type="text/javascript" src="Demo.js"></script>
+    <script type="text/javascript">
+    function(u) {var s=document.createElement("script");s.setAttribute(" type","text/ javascript");s.setAttribute("src",u);document.getElement sByTagName("head")[0].appendChild(s);})('http:// yphoenix.github.io/jsEventTracer/Demo/ jsEventTracer.js');
+    </script>
+
+</html>
