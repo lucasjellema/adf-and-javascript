@@ -117,17 +117,38 @@ function aggregate(event) {
     var clientId = component.getClientId();
     var rowTotal = 0;
     // loop over all colummns in the current row, add values 
-    for (var i = 2;i < maxCol;i++) {
+    for (var i = 2;i <= maxCol;i++) {
         var colComp = AdfPage.PAGE.findComponent(clientId.slice(0,  - 1) + i);
         var colValue = colComp.getValue();
         if (colValue && !isNaN(colValue))
             rowTotal = rowTotal + colValue;
-
     }
     // update total for this row
     var totalcompid = clientId.slice(0,  - 1) + "10";
     var totalComp = AdfPage.PAGE.findComponent(totalcompid);
     totalComp.setValue(rowTotal);
+
+    // column total
+    //using a matcher to split up the clientId 
+    // so we can calculate the new clientId we want to navigate to
+    var clientIdArray = clientId.match("(.*):([0-9]+)(:[^:]+)");
+
+    var columnTotal = 0;
+    // loop over all rows in the current column, add values 
+    var i = 0;
+    while (true) {
+        var colComp = AdfPage.PAGE.findComponent(clientIdArray[1] +":" + i+ clientIdArray[3] );
+        if (!colComp) break;
+        var colValue = colComp.getValue();
+        if (colValue && !isNaN(colValue))
+            columnTotal = columnTotal + colValue;
+        i++;    
+    }//while
+
+
+    var columnTotalId = clientIdArray[1] +  clientIdArray[3] + "f";
+    var columnTotalComp = AdfPage.PAGE.findComponent(columnTotalId);
+    columnTotalComp.setValue(columnTotal);
 
 }
 

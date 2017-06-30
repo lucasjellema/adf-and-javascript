@@ -44,6 +44,9 @@
                                     <af:convertNumber groupingUsed="false"
                                                       pattern="#{bindings.EmptyGridDataType.hints.Row.format}"/>
                                 </af:inputText>
+                                                    <f:facet name="footer">
+                                    <af:inputText value="Column Totals" shortDesc="Column Totals" id="it1f" readOnly="true"/>
+                                </f:facet>
                             </af:column>
                             <af:column sortProperty="#{bindings.EmptyGridDataType.hints.A.name}" filterable="false"
                                        sortable="false" headerText="#{bindings.EmptyGridDataType.hints.A.label}"
@@ -59,6 +62,9 @@
                                                       pattern="#{bindings.EmptyGridDataType.hints.A.format}"/>
                                     <af:clientListener method="aggregate" type="valueChange"/>
                                 </af:inputText>
+                                <f:facet name="footer">
+                                    <af:inputText value="0" shortDesc="Column Total" id="it2f" clientComponent="true"/>
+                                </f:facet>
                             </af:column>
                             <af:column sortProperty="#{bindings.EmptyGridDataType.hints.B.name}" filterable="false"
                                        sortable="false" headerText="#{bindings.EmptyGridDataType.hints.B.label}"
@@ -74,6 +80,9 @@
                                                       pattern="#{bindings.EmptyGridDataType.hints.B.format}"/>
                                     <af:clientListener method="aggregate" type="valueChange"/>
                                 </af:inputText>
+                                <f:facet name="footer">
+                                    <af:inputText value="0" shortDesc="Column Total" id="it3f" clientComponent="true"/>
+                                </f:facet>
                             </af:column>
                             <af:column sortProperty="#{bindings.EmptyGridDataType.hints.C.name}" filterable="false"
                                        sortable="false" headerText="#{bindings.EmptyGridDataType.hints.C.label}"
@@ -89,6 +98,9 @@
                                                       pattern="#{bindings.EmptyGridDataType.hints.C.format}"/>
                                     <af:clientListener method="aggregate" type="valueChange"/>
                                 </af:inputText>
+                                <f:facet name="footer">
+                                    <af:inputText value="0" shortDesc="Column Total" id="it4f" clientComponent="true"/>
+                                </f:facet>
                             </af:column>
                             <af:column sortProperty="#{bindings.EmptyGridDataType.hints.D.name}" filterable="false"
                                        sortable="false" headerText="#{bindings.EmptyGridDataType.hints.D.label}"
@@ -104,6 +116,9 @@
                                                       pattern="#{bindings.EmptyGridDataType.hints.D.format}"/>
                                     <af:clientListener method="aggregate" type="valueChange"/>
                                 </af:inputText>
+                                <f:facet name="footer">
+                                    <af:inputText value="0" shortDesc="Column Total" id="it5f" clientComponent="true"/>
+                                </f:facet>
                             </af:column>
                             <af:column sortProperty="#{bindings.EmptyGridDataType.hints.E.name}" filterable="false"
                                        sortable="false" headerText="#{bindings.EmptyGridDataType.hints.E.label}"
@@ -119,6 +134,9 @@
                                                       pattern="#{bindings.EmptyGridDataType.hints.E.format}"/>
                                     <af:clientListener method="aggregate" type="valueChange"/>
                                 </af:inputText>
+                                <f:facet name="footer">
+                                    <af:inputText value="0" shortDesc="Column Total" id="it6f" clientComponent="true"/>
+                                </f:facet>
                             </af:column>
                             <af:column sortProperty="#{bindings.EmptyGridDataType.hints.F.name}" filterable="false"
                                        sortable="false" headerText="#{bindings.EmptyGridDataType.hints.F.label}"
@@ -134,6 +152,9 @@
                                                       pattern="#{bindings.EmptyGridDataType.hints.F.format}"/>
                                     <af:clientListener method="aggregate" type="valueChange"/>
                                 </af:inputText>
+                                <f:facet name="footer">
+                                    <af:inputText value="0" shortDesc="Column Total" id="it7f" clientComponent="true"/>
+                                </f:facet>
                             </af:column>
                             <af:column sortProperty="#{bindings.EmptyGridDataType.hints.G.name}" filterable="false"
                                        sortable="false" headerText="#{bindings.EmptyGridDataType.hints.G.label}"
@@ -149,6 +170,9 @@
                                                       pattern="#{bindings.EmptyGridDataType.hints.G.format}"/>
                                     <af:clientListener method="aggregate" type="valueChange"/>
                                 </af:inputText>
+                                <f:facet name="footer">
+                                    <af:inputText value="0" shortDesc="Column Total" id="it8f" clientComponent="true"/>
+                                </f:facet>
                             </af:column>
                             <af:column sortProperty="#{bindings.EmptyGridDataType.hints.H.name}" filterable="false"
                                        sortable="false" headerText="#{bindings.EmptyGridDataType.hints.H.label}"
@@ -164,17 +188,19 @@
                                                       pattern="#{bindings.EmptyGridDataType.hints.H.format}"/>
                                     <af:clientListener method="aggregate" type="valueChange"/>
                                 </af:inputText>
+                                <f:facet name="footer">
+                                    <af:inputText value="0" shortDesc="Column Total" id="it9f" clientComponent="true"/>
+                                </f:facet>
                             </af:column>
                             <af:column sortProperty="#{bindings.EmptyGridDataType.hints.Total.name}" filterable="false"
                                        sortable="false" headerText="#{bindings.EmptyGridDataType.hints.Total.label}"
                                        id="c10">
-                                <af:inputText value="#{row.bindings.Total.inputValue}" readOnly="false" disabled="false" 
+                                <af:inputText value="#{row.bindings.Total.inputValue}" readOnly="false" disabled="false"
                                               label="#{bindings.EmptyGridDataType.hints.Total.label}"
                                               required="#{bindings.EmptyGridDataType.hints.Total.mandatory}"
                                               columns="#{bindings.EmptyGridDataType.hints.Total.displayWidth}"
                                               maximumLength="#{bindings.EmptyGridDataType.hints.Total.precision}"
-                                              
-                                              clientComponent="true" 
+                                              clientComponent="true"
                                               shortDesc="#{bindings.EmptyGridDataType.hints.Total.tooltip}" id="it10"
                                               contentStyle="background-color:Scrollbar;">
                                     <f:validator binding="#{row.bindings.Total.validator}"/>
