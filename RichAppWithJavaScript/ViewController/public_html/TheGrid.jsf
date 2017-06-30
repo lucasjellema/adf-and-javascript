@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="TheGrid.jsf" id="d1">
+        <af:resource type="javascript" source="/resources/js/AppLibraryTheGrid.js"/>
+        <af:clientListener method="init" type="load"/>
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="50px" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                        <!-- Header -->
+                        <af:panelHeader text="The Grid - navigate with Shift + Arrow" id="ph1">
+                            <f:facet name="context"/>
+                            <f:facet name="toolbar"/>
+                            <f:facet name="menuBar"/>
+                            <f:facet name="legend"/>
+                            <f:facet name="info"/>
+                        </af:panelHeader>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Content -->
+                        <af:table value="#{bindings.EmptyGridDataType.collectionModel}" var="row"
+                                  rows="#{bindings.EmptyGridDataType.rangeSize}"
+                                  emptyText="#{bindings.EmptyGridDataType.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  rowBandingInterval="0"
+                                  selectedRowKeys="#{bindings.EmptyGridDataType.collectionModel.selectedRow}"
+                                  rowSelection="multiple" fetchSize="#{bindings.EmptyGridDataType.rangeSize}"
+                                  filterModel="#{bindings.EmptyGridDataTypeQuery.queryDescriptor}" filterVisible="true"
+                                  queryListener="#{bindings.EmptyGridDataTypeQuery.processQuery}" varStatus="vs"
+                                  id="t1">
+                            <af:column sortProperty="#{bindings.EmptyGridDataType.hints.Row.name}" filterable="false"
+                                       sortable="false" headerText="#{bindings.EmptyGridDataType.hints.Row.label}"
+                                       id="c1">
+                                <af:inputText value="#{row.bindings.Row.inputValue}" readOnly="true"
+                                              label="#{bindings.EmptyGridDataType.hints.Row.label}"
+                                              required="#{bindings.EmptyGridDataType.hints.Row.mandatory}"
+                                              columns="#{bindings.EmptyGridDataType.hints.Row.displayWidth}"
+                                              maximumLength="#{bindings.EmptyGridDataType.hints.Row.precision}"
+                                              shortDesc="#{bindings.EmptyGridDataType.hints.Row.tooltip}" id="it1">
+                                    <f:validator binding="#{row.bindings.Row.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.EmptyGridDataType.hints.Row.format}"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.EmptyGridDataType.hints.A.name}" filterable="false"
+                                       sortable="false" headerText="#{bindings.EmptyGridDataType.hints.A.label}"
+                                       id="c2">
+                                <af:inputText value="#{row.bindings.A.inputValue}"
+                                              label="#{bindings.EmptyGridDataType.hints.A.label}"
+                                              required="#{bindings.EmptyGridDataType.hints.A.mandatory}"
+                                              columns="#{bindings.EmptyGridDataType.hints.A.displayWidth}"
+                                              maximumLength="#{bindings.EmptyGridDataType.hints.A.precision}"
+                                              shortDesc="#{bindings.EmptyGridDataType.hints.A.tooltip}" id="it2">
+                                    <f:validator binding="#{row.bindings.A.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.EmptyGridDataType.hints.A.format}"/>
+                                    <af:clientListener method="aggregate" type="valueChange"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.EmptyGridDataType.hints.B.name}" filterable="false"
+                                       sortable="false" headerText="#{bindings.EmptyGridDataType.hints.B.label}"
+                                       id="c3">
+                                <af:inputText value="#{row.bindings.B.inputValue}"
+                                              label="#{bindings.EmptyGridDataType.hints.B.label}"
+                                              required="#{bindings.EmptyGridDataType.hints.B.mandatory}"
+                                              columns="#{bindings.EmptyGridDataType.hints.B.displayWidth}"
+                                              maximumLength="#{bindings.EmptyGridDataType.hints.B.precision}"
+                                              shortDesc="#{bindings.EmptyGridDataType.hints.B.tooltip}" id="it3">
+                                    <f:validator binding="#{row.bindings.B.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.EmptyGridDataType.hints.B.format}"/>
+                                    <af:clientListener method="aggregate" type="valueChange"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.EmptyGridDataType.hints.C.name}" filterable="false"
+                                       sortable="false" headerText="#{bindings.EmptyGridDataType.hints.C.label}"
+                                       id="c4">
+                                <af:inputText value="#{row.bindings.C.inputValue}"
+                                              label="#{bindings.EmptyGridDataType.hints.C.label}"
+                                              required="#{bindings.EmptyGridDataType.hints.C.mandatory}"
+                                              columns="#{bindings.EmptyGridDataType.hints.C.displayWidth}"
+                                              maximumLength="#{bindings.EmptyGridDataType.hints.C.precision}"
+                                              shortDesc="#{bindings.EmptyGridDataType.hints.C.tooltip}" id="it4">
+                                    <f:validator binding="#{row.bindings.C.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.EmptyGridDataType.hints.C.format}"/>
+                                    <af:clientListener method="aggregate" type="valueChange"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.EmptyGridDataType.hints.D.name}" filterable="false"
+                                       sortable="false" headerText="#{bindings.EmptyGridDataType.hints.D.label}"
+                                       id="c5">
+                                <af:inputText value="#{row.bindings.D.inputValue}"
+                                              label="#{bindings.EmptyGridDataType.hints.D.label}"
+                                              required="#{bindings.EmptyGridDataType.hints.D.mandatory}"
+                                              columns="#{bindings.EmptyGridDataType.hints.D.displayWidth}"
+                                              maximumLength="#{bindings.EmptyGridDataType.hints.D.precision}"
+                                              shortDesc="#{bindings.EmptyGridDataType.hints.D.tooltip}" id="it5">
+                                    <f:validator binding="#{row.bindings.D.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.EmptyGridDataType.hints.D.format}"/>
+                                    <af:clientListener method="aggregate" type="valueChange"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.EmptyGridDataType.hints.E.name}" filterable="false"
+                                       sortable="false" headerText="#{bindings.EmptyGridDataType.hints.E.label}"
+                                       id="c6">
+                                <af:inputText value="#{row.bindings.E.inputValue}"
+                                              label="#{bindings.EmptyGridDataType.hints.E.label}"
+                                              required="#{bindings.EmptyGridDataType.hints.E.mandatory}"
+                                              columns="#{bindings.EmptyGridDataType.hints.E.displayWidth}"
+                                              maximumLength="#{bindings.EmptyGridDataType.hints.E.precision}"
+                                              shortDesc="#{bindings.EmptyGridDataType.hints.E.tooltip}" id="it6">
+                                    <f:validator binding="#{row.bindings.E.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.EmptyGridDataType.hints.E.format}"/>
+                                    <af:clientListener method="aggregate" type="valueChange"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.EmptyGridDataType.hints.F.name}" filterable="false"
+                                       sortable="false" headerText="#{bindings.EmptyGridDataType.hints.F.label}"
+                                       id="c7">
+                                <af:inputText value="#{row.bindings.F.inputValue}"
+                                              label="#{bindings.EmptyGridDataType.hints.F.label}"
+                                              required="#{bindings.EmptyGridDataType.hints.F.mandatory}"
+                                              columns="#{bindings.EmptyGridDataType.hints.F.displayWidth}"
+                                              maximumLength="#{bindings.EmptyGridDataType.hints.F.precision}"
+                                              shortDesc="#{bindings.EmptyGridDataType.hints.F.tooltip}" id="it7">
+                                    <f:validator binding="#{row.bindings.F.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.EmptyGridDataType.hints.F.format}"/>
+                                    <af:clientListener method="aggregate" type="valueChange"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.EmptyGridDataType.hints.G.name}" filterable="false"
+                                       sortable="false" headerText="#{bindings.EmptyGridDataType.hints.G.label}"
+                                       id="c8">
+                                <af:inputText value="#{row.bindings.G.inputValue}"
+                                              label="#{bindings.EmptyGridDataType.hints.G.label}"
+                                              required="#{bindings.EmptyGridDataType.hints.G.mandatory}"
+                                              columns="#{bindings.EmptyGridDataType.hints.G.displayWidth}"
+                                              maximumLength="#{bindings.EmptyGridDataType.hints.G.precision}"
+                                              shortDesc="#{bindings.EmptyGridDataType.hints.G.tooltip}" id="it8">
+                                    <f:validator binding="#{row.bindings.G.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.EmptyGridDataType.hints.G.format}"/>
+                                    <af:clientListener method="aggregate" type="valueChange"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.EmptyGridDataType.hints.H.name}" filterable="false"
+                                       sortable="false" headerText="#{bindings.EmptyGridDataType.hints.H.label}"
+                                       id="c9">
+                                <af:inputText value="#{row.bindings.H.inputValue}"
+                                              label="#{bindings.EmptyGridDataType.hints.H.label}"
+                                              required="#{bindings.EmptyGridDataType.hints.H.mandatory}"
+                                              columns="#{bindings.EmptyGridDataType.hints.H.displayWidth}"
+                                              maximumLength="#{bindings.EmptyGridDataType.hints.H.precision}"
+                                              shortDesc="#{bindings.EmptyGridDataType.hints.H.tooltip}" id="it9">
+                                    <f:validator binding="#{row.bindings.H.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.EmptyGridDataType.hints.H.format}"/>
+                                    <af:clientListener method="aggregate" type="valueChange"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.EmptyGridDataType.hints.Total.name}" filterable="false"
+                                       sortable="false" headerText="#{bindings.EmptyGridDataType.hints.Total.label}"
+                                       id="c10">
+                                <af:inputText value="#{row.bindings.Total.inputValue}" readOnly="false" disabled="false" 
+                                              label="#{bindings.EmptyGridDataType.hints.Total.label}"
+                                              required="#{bindings.EmptyGridDataType.hints.Total.mandatory}"
+                                              columns="#{bindings.EmptyGridDataType.hints.Total.displayWidth}"
+                                              maximumLength="#{bindings.EmptyGridDataType.hints.Total.precision}"
+                                              
+                                              clientComponent="true" 
+                                              shortDesc="#{bindings.EmptyGridDataType.hints.Total.tooltip}" id="it10"
+                                              contentStyle="background-color:Scrollbar;">
+                                    <f:validator binding="#{row.bindings.Total.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.EmptyGridDataType.hints.Total.format}"/>
+                                </af:inputText>
+                            </af:column>
+                        </af:table>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>

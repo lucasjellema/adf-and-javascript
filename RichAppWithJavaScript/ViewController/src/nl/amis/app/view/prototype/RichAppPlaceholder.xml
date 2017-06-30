@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/placeholder"
+  Name="RichAppPlaceholder"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge">
+  <ViewUsage
+    Name="EmptyGridDataType"
+    ViewObjectName="nl.amis.app.view.prototype.EmptyGridDataType"/>
+</AppModule>

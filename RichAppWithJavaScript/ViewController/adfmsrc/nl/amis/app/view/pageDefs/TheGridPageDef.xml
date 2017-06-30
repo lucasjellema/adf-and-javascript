@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="TheGridPageDef"
+                Package="nl.amis.app.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmptyGridDataType" RangeSize="25" DataControl="RichAppPlaceholder" id="EmptyGridDataTypeIterator"/>
+    <searchRegion Binds="EmptyGridDataTypeIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="EmptyGridDataTypeQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="EmptyGridDataTypeIterator" id="EmptyGridDataType">
+      <nodeDefinition DefName="nl.amis.app.view.prototype.EmptyGridDataType" Name="EmptyGridDataType0">
+        <AttrNames>
+          <Item Value="Row"/>
+          <Item Value="A"/>
+          <Item Value="B"/>
+          <Item Value="C"/>
+          <Item Value="D"/>
+          <Item Value="E"/>
+          <Item Value="F"/>
+          <Item Value="G"/>
+          <Item Value="H"/>
+          <Item Value="Total"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.0.31" id="DataBindings"
+             SeparateXMLFiles="false" Package="nl.amis.app.view" ClientType="Generic">
+  <pageMap>
+    <page path="/TheGrid.jsf" usageId="nl_amis_app_view_TheGridPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="nl_amis_app_view_TheGridPageDef" path="nl.amis.app.view.pageDefs.TheGridPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="RichAppPlaceholder" path="nl.amis.app.view.RichAppPlaceholder"/>
+  </dataControlUsages>
+</Application>

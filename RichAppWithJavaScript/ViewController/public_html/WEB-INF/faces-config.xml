@@ -17,5 +17,9 @@
       <from-outcome>keyup</from-outcome>
       <to-view-id>/simple-input-instant-upper.jsf</to-view-id>
     </navigation-case>
+    <navigation-case>
+      <from-outcome>thegrid</from-outcome>
+      <to-view-id>/TheGrid.jsf</to-view-id>
+    </navigation-case>
   </navigation-rule>
 </faces-config>

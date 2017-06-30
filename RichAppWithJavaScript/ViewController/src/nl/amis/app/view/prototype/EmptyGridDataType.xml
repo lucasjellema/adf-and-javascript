@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/placeholder"
+  Name="EmptyGridDataType"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true">
+  <ViewAttribute
+    Name="Row"
+    Type="oracle.jbo.domain.Number"/>
+  <ViewAttribute
+    Name="A"
+    Type="oracle.jbo.domain.Number"/>
+  <ViewAttribute
+    Name="B"
+    Type="oracle.jbo.domain.Number"/>
+  <ViewAttribute
+    Name="C"
+    Type="oracle.jbo.domain.Number"/>
+  <ViewAttribute
+    Name="D"
+    Type="oracle.jbo.domain.Number"/>
+  <ViewAttribute
+    Name="E"
+    Type="oracle.jbo.domain.Number"/>
+  <ViewAttribute
+    Name="F"
+    Type="oracle.jbo.domain.Number"/>
+  <ViewAttribute
+    Name="G"
+    Type="oracle.jbo.domain.Number"/>
+  <ViewAttribute
+    Name="H"
+    Type="oracle.jbo.domain.Number"/>
+  <ViewAttribute
+    Name="Total"
+    Type="oracle.jbo.domain.Number"/>
+  <StaticList
+    Name="EmptyGridDataType"
+    Rows="7"
+    Columns="10"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      xmlns="http://xmlns.oracle.com/bc4j"
+      PropertiesFile="nl.amis.app.view.ViewControllerBundle"/>
+  </ResourceBundle>
+</ViewObject>

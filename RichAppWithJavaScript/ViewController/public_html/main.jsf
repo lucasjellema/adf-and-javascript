@@ -23,6 +23,7 @@
                             <af:link text="Simple Input" id="l1" action="simple"/>
                             <af:link text="HTML5 Attributes and Listeners" id="l2" action="html5"/>
                             <af:link text="Instant Uppercase (Key Up)" id="l3" action="keyup"/>
+                            <af:link text="The Grid" id="l4" action="thegrid"/>
                         </af:panelList>
                     </af:gridCell>
                 </af:gridRow>
