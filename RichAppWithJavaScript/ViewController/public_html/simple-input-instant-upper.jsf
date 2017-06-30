@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="simple-input.jsf" id="d1">
-        <af:resource type="javascript" source="/resources/js/AppLibrary.js"/>
+        <af:resource type="javascript" source="/resources/js/AppLibraryInstantUpper.js"/>
         <af:form id="f1">
             <af:panelGridLayout id="pgl1">
                 <af:gridRow height="50px" id="gr1">
@@ -15,8 +15,11 @@
                 <af:gridRow height="100%" id="gr2">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
                         <!-- Content -->
-                        <af:inputText label="Input" id="theField">
+                        <af:inputText label="Input" id="theField" shortDesc="Cursor moves to end of value after a change is made">
                             <af:clientListener type="keyUp" method="toUpperKeyInput"/>
+                        </af:inputText>
+                        <af:inputText label="Second Input" id="theField2" shortDesc="Cursor stays in (or is relocated to) current position">
+                            <af:clientListener type="keyUp" method="forceUppercase"/>
                         </af:inputText>
                     </af:gridCell>
                 </af:gridRow>

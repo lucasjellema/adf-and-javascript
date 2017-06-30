@@ -3,4 +3,19 @@
   <application>
     <default-render-kit-id>oracle.adf.rich</default-render-kit-id>
   </application>
+  <navigation-rule>
+    <from-view-id>/main.jsf</from-view-id>
+    <navigation-case>
+      <from-outcome>html5</from-outcome>
+      <to-view-id>/simple-input-number.jsf</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>simple</from-outcome>
+      <to-view-id>/simple-input.jsf</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>keyup</from-outcome>
+      <to-view-id>/simple-input-instant-upper.jsf</to-view-id>
+    </navigation-case>
+  </navigation-rule>
 </faces-config>
