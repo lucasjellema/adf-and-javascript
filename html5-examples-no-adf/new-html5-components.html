@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>HTML Page with some new HTML5 components - works best in Chrome</title>
+</head>
+
+<body>
+    <form autocomplete="on" validate>
+        <fieldset>
+            <legend>Personal information:</legend>
+            Input field with maxlength: <input id="theField" type=text placeholder="mandatory plain text field" maxlength="5"
+                required/><br/> Quantity (between 1 and 5):<input type="number" name="quantity" min="1" max="5" placeholder="1"><br/>            Range (from 0..10) <input type="range" name="points" min="0" max="10" step="2"><br/> Enter a date before 1980-01-01:
+            <input type="date" name="bday" max="1979-12-31"><br/> Enter a date after 2000-01-01:
+            <input type="date" name="bday" min="2000-01-02"><br/> Birthday (month and year):
+            <input type="month" name="bdaymonth"><br/>
+        </fieldset>
+        Select a time:
+
+        <input type="time" name="usr_time" autofocus><br/> Pick your browser:<input list="browsers"><br/> Pick your second
+        browser:
+        <input list="browsers"><br/>
+        <input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code"></br>
+        Select a file to upload<input type="file" id="fileinput" multiple="multiple" /><br/>
+        <br/>
+        <br/>
+        <input type="submit">
+        <br/>
+        <br/>
+        <fieldset>
+            <legend>Canvas and SVG:</legend>
+            <canvas id="myCanvas" width="200" height="200" style="border:1px solid #000000;">
+                Your browser does not support the HTML5 canvas tag.
+            </canvas>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+            </svg>
+            ></fieldset>
+        <datalist id="browsers">
+            <option value="Internet Explorer">
+                <option value="Firefox">
+                    <option value="Chrome">
+                        <option value="Opera">
+                            <option value="Safari">
+        </datalist>
+    </form>
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        // Create gradient
+        var grd = ctx.createLinearGradient(0, 0, 200, 0);
+        grd.addColorStop(0, "red");
+        grd.addColorStop(0.5, "white");
+        grd.addColorStop(1, "blue");
+
+        // Fill with gradient
+        ctx.fillStyle = grd;
+        ctx.fillRect(10, 10, 150, 80);
+
+        ctx.font = "30px Arial";
+        ctx.fillText("Hello World", 10, 150);
+
+    </script>
+</body>
+
+</html>
