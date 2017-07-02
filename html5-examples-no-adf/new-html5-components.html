@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form autocomplete="on" validate>
+    <form autocomplete="on" validate id="theForm">
         <fieldset>
             <legend>Personal information:</legend>
             Input field with maxlength: <input id="theField" type=text placeholder="mandatory plain text field" maxlength="5"
@@ -22,6 +22,8 @@
         <input type="time" name="usr_time" autofocus><br/> Pick your browser:<input list="browsers"><br/> Pick your second
         browser:
         <input list="browsers"><br/>
+        Fruit:
+        <input type="text" id="fruit"><br/>
         <input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code"></br>
         Select a file to upload<input type="file" id="fileinput" multiple="multiple" /><br/>
         <br/>
@@ -62,6 +64,29 @@
         ctx.font = "30px Arial";
         ctx.fillText("Hello World", 10, 150);
 
+        // programmatically create datalist and link to input elements fruit and basket
+        var datalist = document.createElement("DATALIST");
+        datalist.setAttribute("id", "fruitList");
+        document.getElementById("theForm").appendChild(datalist);
+
+        var option = document.createElement('option');
+        option.value = "Apples";
+        datalist.appendChild(option);
+        var option = document.createElement('option');
+        option.value = "Oranges";
+        datalist.appendChild(option);
+        var option = document.createElement('option');
+        option.value = "Pears";
+        datalist.appendChild(option);
+
+        var fruit = document.getElementById("fruit");
+        fruit.setAttribute("list", "fruitList");
+        var basket = document.createElement("INPUT");
+        basket.setAttribute("type", "text");
+        basket.setAttribute("label", "Fruit Basket");
+
+        basket.setAttribute("list", "fruitList");
+        document.getElementById("theForm").appendChild(basket);
     </script>
 </body>
 
