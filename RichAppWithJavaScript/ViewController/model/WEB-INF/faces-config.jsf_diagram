@@ -181,4 +181,27 @@
       <property
          name="sdm:polyPoints">B44,168.0,212.57422,87.430664,296.5371,T50</property>
    </NavigationCase>
+   <Page
+      id="Page19">
+      <property
+         name="jspName">/intrapage-navigation.jsf</property>
+      <property
+         name="x">870.7471</property>
+      <property
+         name="y">134.51855</property>
+      <property
+         name="wildcard">false</property>
+   </Page>
+   <NavigationCase
+      islink="true"
+      id="NavigationCase20"
+      from="Page2"
+      to="Page19">
+      <property
+         name="description">Navigation Case</property>
+      <property
+         name="fromOutcome">intrapage</property>
+      <property
+         name="sdm:polyPoints">R42,213.48232,151.57422,829.7471,134.53711,L50</property>
+   </NavigationCase>
 </SDM>

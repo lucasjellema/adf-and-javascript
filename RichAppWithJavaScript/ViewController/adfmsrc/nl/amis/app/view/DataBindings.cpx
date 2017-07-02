@@ -4,10 +4,13 @@
   <pageMap>
     <page path="/TheGrid.jsf" usageId="nl_amis_app_view_TheGridPageDef"/>
     <page path="/Countries.jsf" usageId="nl_amis_app_view_CountriesPageDef"/>
+    <page path="/intrapage-navigation.jsf" usageId="nl_amis_app_view_intrapage_navigationPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="nl_amis_app_view_TheGridPageDef" path="nl.amis.app.view.pageDefs.TheGridPageDef"/>
     <page id="nl_amis_app_view_CountriesPageDef" path="nl.amis.app.view.pageDefs.CountriesPageDef"/>
+    <page id="nl_amis_app_view_intrapage_navigationPageDef"
+          path="nl.amis.app.view.pageDefs.intrapage_navigationPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="RichAppPlaceholder" path="nl.amis.app.view.RichAppPlaceholder"/>

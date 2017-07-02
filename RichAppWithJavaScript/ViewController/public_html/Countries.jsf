@@ -78,6 +78,12 @@
                                                       id="it3">
                                             <f:validator binding="#{row.bindings.continent.validator}"/>
                                         </af:inputText>
+                                        <f:facet name="filter">
+                                            <af:inputText label="Continent Filter" id="ContinentFilter"
+                                                          value="#{vs.filterCriteria.continent}">
+                                                <af:clientListener method="enterContinentFilter" type="focus"/>
+                                            </af:inputText>
+                                        </f:facet>
                                     </af:column>
                                     <af:column sortProperty="#{bindings.CountriesDataType.hints.population.name}"
                                                filterable="true" sortable="true"

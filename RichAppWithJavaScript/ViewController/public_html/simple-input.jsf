@@ -15,7 +15,7 @@
                 <af:gridRow height="100%" id="gr2">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
                         <!-- Content -->
-                        <af:inputText  label="Input" id="theField" autoComplete="off">
+                        <af:inputText  label="Input" id="theField" autoComplete="off" shortDesc="Using clientListener" >
                             <af:clientListener type="blur" method="toUpper"/>
                         </af:inputText>
                     </af:gridCell>

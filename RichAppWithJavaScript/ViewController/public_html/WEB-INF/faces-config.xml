@@ -33,5 +33,9 @@
       <from-outcome>countries</from-outcome>
       <to-view-id>/Countries.jsf</to-view-id>
     </navigation-case>
+    <navigation-case>
+      <from-outcome>intrapage</from-outcome>
+      <to-view-id>/intrapage-navigation.jsf</to-view-id>
+    </navigation-case>
   </navigation-rule>
 </faces-config>
