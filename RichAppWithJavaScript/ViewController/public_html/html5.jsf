@@ -23,6 +23,8 @@
                                       shortDesc="Added attributes: type number, min and max, step"/>
                         <af:inputText label="Range Input" id="theRangeField"
                                       shortDesc="Added attributes: type range, min and max and step"/>
+                        <af:inputText label="Text Input with List and Suggest" id="theListField"
+                                      shortDesc="Added attributes: list"/>
                     </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>

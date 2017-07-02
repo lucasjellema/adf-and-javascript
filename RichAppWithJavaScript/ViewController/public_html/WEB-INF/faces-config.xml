@@ -29,5 +29,9 @@
       <from-outcome>popupeditor</from-outcome>
       <to-view-id>/popupeditor.jsf</to-view-id>
     </navigation-case>
+    <navigation-case>
+      <from-outcome>countries</from-outcome>
+      <to-view-id>/Countries.jsf</to-view-id>
+    </navigation-case>
   </navigation-rule>
 </faces-config>

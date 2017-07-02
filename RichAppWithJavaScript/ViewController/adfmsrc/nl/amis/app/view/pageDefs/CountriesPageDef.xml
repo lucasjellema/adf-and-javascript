@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="CountriesPageDef"
+                Package="nl.amis.app.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CountriesDataType" RangeSize="25" DataControl="RichAppPlaceholder" id="CountriesDataTypeIterator"/>
+    <searchRegion Binds="CountriesDataTypeIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="CountriesDataTypeQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="CountriesDataTypeIterator" id="CountriesDataType">
+      <nodeDefinition DefName="nl.amis.app.view.prototype.CountriesDataType" Name="CountriesDataType0">
+        <AttrNames>
+          <Item Value="name"/>
+          <Item Value="code"/>
+          <Item Value="continent"/>
+          <Item Value="population"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="CountriesDataTypeIterator" id="name">
+      <AttrNames>
+        <Item Value="name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CountriesDataTypeIterator" id="code">
+      <AttrNames>
+        <Item Value="code"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CountriesDataTypeIterator" id="continent">
+      <AttrNames>
+        <Item Value="continent"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CountriesDataTypeIterator" id="population">
+      <AttrNames>
+        <Item Value="population"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CountriesDataTypeIterator" id="area">
+      <AttrNames>
+        <Item Value="area"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CountriesDataTypeIterator" id="coastline">
+      <AttrNames>
+        <Item Value="coastline"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CountriesDataTypeIterator" id="governmentForm">
+      <AttrNames>
+        <Item Value="governmentForm"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CountriesDataTypeIterator" id="currency">
+      <AttrNames>
+        <Item Value="currency"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CountriesDataTypeIterator" id="currencyCode">
+      <AttrNames>
+        <Item Value="currencyCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CountriesDataTypeIterator" id="dialingPrefix">
+      <AttrNames>
+        <Item Value="dialingPrefix"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CountriesDataTypeIterator" id="birthrate">
+      <AttrNames>
+        <Item Value="birthrate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CountriesDataTypeIterator" id="deathrate">
+      <AttrNames>
+        <Item Value="deathrate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CountriesDataTypeIterator" id="liveExpectancy">
+      <AttrNames>
+        <Item Value="liveExpectancy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CountriesDataTypeIterator" id="url">
+      <AttrNames>
+        <Item Value="url"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

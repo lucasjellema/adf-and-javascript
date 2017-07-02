@@ -3,9 +3,11 @@
              SeparateXMLFiles="false" Package="nl.amis.app.view" ClientType="Generic">
   <pageMap>
     <page path="/TheGrid.jsf" usageId="nl_amis_app_view_TheGridPageDef"/>
+    <page path="/Countries.jsf" usageId="nl_amis_app_view_CountriesPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="nl_amis_app_view_TheGridPageDef" path="nl.amis.app.view.pageDefs.TheGridPageDef"/>
+    <page id="nl_amis_app_view_CountriesPageDef" path="nl.amis.app.view.pageDefs.CountriesPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="RichAppPlaceholder" path="nl.amis.app.view.RichAppPlaceholder"/>

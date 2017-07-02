@@ -5,7 +5,7 @@ function addAttribute(elementId, attributeName, attributeValue) {
 
 function addListener(elementId, type, functionRef) {
     var el = document.getElementById(elementId);
-    el.addEventListener(type, functionRef,false);
+    el.addEventListener(type, functionRef, false);
 }
 
 function handleSelectionEvent(e) {
@@ -13,19 +13,22 @@ function handleSelectionEvent(e) {
     var obj = elem.selectionStart;
     var obj2 = elem.selectionEnd;
     //  elem.setSelectionRange(2,5)
-    console.log('selection made in component '+obj+'-'+obj2);
+    console.log('selection made in component ' + obj + '-' + obj2);
 }
 
 function handlePasteEvent(e) {
     var elem = e.currentTarget;
-    console.log('paste performed from clipboard on in component '+elem.id+": "+e.clipboardData.getData("text/plain"));
+    console.log('paste performed from clipboard on in component ' + elem.id + ": " + e.clipboardData.getData("text/plain"));
 }
-
 
 function addListenersToTheFields() {
     var id = "theField::content";
-    addListener(id, "select", function(e){ handleSelectionEvent(e)} )
-    addListener(id, "paste", function(e){ handlePasteEvent(e)} )
+    addListener(id, "select", function (e) {
+        handleSelectionEvent(e)
+    })
+    addListener(id, "paste", function (e) {
+        handlePasteEvent(e)
+    })
 }
 
 function addAttributesToTheFields() {
@@ -45,14 +48,32 @@ function addAttributesToTheFields() {
     addAttribute(id, "max", "10");
     addAttribute(id, "step", "2");
 
+    id = "theListField::content";
+    addAttribute(id, "list", "fruitList");
+
+}
+
+function addOption(datalist, value) {
+    var option = document.createElement("option");
+    option.value = value;
+    datalist.appendChild(option);
+}
+
+function addDataList() {
+    // programmatically create datalist and link to input elements fruit and basket
+    var datalist = document.createElement("DATALIST");
+    datalist.setAttribute("id", "fruitList");
+    document.getElementById("f1").appendChild(datalist);
+    addOption(datalist, "Apples");
+    addOption(datalist, "Pears");
+    addOption(datalist, "Oranges");
 }
 
 function init() {
+    addDataList();
     addAttributesToTheFields();
     addListenersToTheFields();
 }
-
-
 
 function handleContextMenuEvent(event) {
     var inputComponent = event.getSource();

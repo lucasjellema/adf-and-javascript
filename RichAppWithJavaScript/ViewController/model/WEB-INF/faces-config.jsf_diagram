@@ -91,7 +91,7 @@
       <property
          name="fromOutcome">thegrid</property>
       <property
-         name="sdm:polyPoints">B50,171.5,212.57422,190.47363,311.5371,T50</property>
+         name="sdm:polyPoints">B56,175.0,212.57422,190.47363,311.5371,T50</property>
    </NavigationCase>
    <Page
       id="Page11">
@@ -157,5 +157,28 @@
          name="fromOutcome">popupeditor</property>
       <property
          name="sdm:polyPoints">R54,214.65929,162.07422,625.2881,365.5371,L50</property>
+   </NavigationCase>
+   <Page
+      id="Page32">
+      <property
+         name="jspName">/Countries.jsf</property>
+      <property
+         name="x">87.430664</property>
+      <property
+         name="y">350.51855</property>
+      <property
+         name="wildcard">false</property>
+   </Page>
+   <NavigationCase
+      islink="true"
+      id="NavigationCase33"
+      from="Page2"
+      to="Page32">
+      <property
+         name="description">Navigation Case</property>
+      <property
+         name="fromOutcome">countries</property>
+      <property
+         name="sdm:polyPoints">B44,168.0,212.57422,87.430664,296.5371,T50</property>
    </NavigationCase>
 </SDM>

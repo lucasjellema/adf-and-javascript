@@ -1,3 +1,4 @@
+name,code,continent,capital,population,area,coastline,governmentForm,currency,currencyCode,dialingPrefix,birthrate,deathrate,liveExpectancy,url
 Afghanistan,AF,Asia,,33332025,652230,0,Presidential islamic republic,Afghani,AFN,93,38.3,13.7,51.3,https://www.laenderdaten.info/Asien/Afghanistan/index.php
 Egypt,EG,Africa,,94666993,1001450,2450,Presidential republic,Pfund,EGP,20,30.3,4.7,72.7,https://www.laenderdaten.info/Afrika/Aegypten/index.php
 Aland Islands,AX,Europe,,29013,1580,0,Autonomous region of Finland,Euro,EUR,358,0,0,0,https://www.laenderdaten.info/Europa/Aland/index.php

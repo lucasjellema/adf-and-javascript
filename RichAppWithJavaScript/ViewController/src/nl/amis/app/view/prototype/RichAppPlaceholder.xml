@@ -9,4 +9,7 @@
   <ViewUsage
     Name="EmptyGridDataType"
     ViewObjectName="nl.amis.app.view.prototype.EmptyGridDataType"/>
+  <ViewUsage
+    Name="CountriesDataType"
+    ViewObjectName="nl.amis.app.view.prototype.CountriesDataType"/>
 </AppModule>
