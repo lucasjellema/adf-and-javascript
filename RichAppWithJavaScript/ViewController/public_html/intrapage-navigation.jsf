@@ -8,7 +8,7 @@
         <af:clientListener method="init" type="load"/>
         <af:form id="f1">
             <af:panelGridLayout id="pgl1">
-                <af:gridRow height="100px" id="gr1">
+                <af:gridRow height="150px" id="gr1">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
                         <!-- Header -->
                         <af:panelHeader text="Intrapage Navigation - use ALT E and ALT T to move to End and Top"
