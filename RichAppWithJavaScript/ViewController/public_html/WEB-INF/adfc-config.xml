@@ -5,4 +5,9 @@
     <managed-bean-class>nl.amis.app.view.Client2ServerBean</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>
+  <managed-bean id="__2">
+    <managed-bean-name>intrapageNavigationBean</managed-bean-name>
+    <managed-bean-class>nl.amis.app.view.IntrapageNavigationBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

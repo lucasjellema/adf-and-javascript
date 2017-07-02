@@ -15,14 +15,6 @@ public class Client2ServerBean {
     public Client2ServerBean() {
         super();
     }
-
-    public String getText() {
-        return "<h1>Heading 1</h1><p>Some text </p>" +
-            "<h2>Subheading</h2><p>and more text</p>" +
-            "<a id=\"targ\"/>"+
-        "<h2>Subheading</h2><p >Ipsem Lorem Wilhelmus van Nassoue</p>" ;
-    }
-
     public Date getTime() {
         return new java.util.Date();
     }

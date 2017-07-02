@@ -31,7 +31,7 @@
                         <h:panelGroup id="pg1">
                             <h:graphicImage url="https://www.amis.nl/files/Beeld_1.jpg" id="gi1"/>
                             <af:richTextEditor label="Rich Editor" id="rte1" rows="10" columns="80"
-                                               value="#{client2serverBean.text}" clientComponent="true">
+                                               value="#{intrapageNavigationBean.text}" clientComponent="true">
                                 <f:facet name="footer"/>
                             </af:richTextEditor>
                             <h:graphicImage url="https://www.amis.nl/files/iStock-5430854081.jpg" id="gi2"/>
