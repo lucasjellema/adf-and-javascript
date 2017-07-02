@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="client-to-server.jsf" id="doc">
+        <af:resource type="javascript" source="/resources/js/AppLibraryClient2Server.js"/>
+                <af:clientListener method="init" type="load"/>
+                <af:serverListener type="refreshTimeListener" method="#{client2serverBean.refreshTime}"/>
+
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="150px" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Header -->
+                        <af:panelHeader text="Client to Server - use Alt T to refresh time" id="ph1">
+                        <af:outputText id="timeDisplay" value="Last time received from server #{client2serverBean.time}"
+                                       binding="#{client2serverBean.timerField}" clientComponent="true"/>
+                            <af:button partialSubmit="true" id="pt_help" destination="http://www.nu.nl"
+                                       targetFrame="_blank"  text="Help">
+                                <af:clientListener type="click" method="helpCallListener"/>
+                                <af:serverListener type="callForHelpListener" method="#{client2serverBean.callForHelp}"/>
+                                <af:clientAttribute name="helpTopic" value="How to do Page ONE - just click "/>
+                            </af:button>
+                        </af:panelHeader>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                       
+                        <af:inputText label="Range Input" id="theRangeField"
+                                      shortDesc="Added attributes: type range, min and max and step"/>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>

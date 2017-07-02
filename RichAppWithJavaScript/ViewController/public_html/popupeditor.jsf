@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="popupeditor.jsf" id="d1">
+        <af:resource type="javascript" source="/resources/js/AppLibraryPopupEditor.js"/>
+        <af:clientListener method="init" type="load"/>
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="50px" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Header -->
+                        <af:panelHeader text="Simple Input with Popup Editor - use double click or ALT+E on input field"
+                                        id="ph1"></af:panelHeader>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                        <!-- Content -->
+                        <af:inputText label="Input" id="theField" columns="30"
+                                      shortDesc="Use double click or context menu to bring up extended editor">
+                            <af:showPopupBehavior popupId="p1" triggerType="dblClick"/>
+                        </af:inputText>
+                        <af:inputText label="Another Input with Extended Editor" id="theSecondField" columns="20"
+                                      shortDesc="Use double click or context menu to bring up extended editor">
+                            <af:showPopupBehavior popupId="p1" triggerType="dblClick"/>
+                        </af:inputText>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+            <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
+                <af:clientListener method="extendedFieldPopupOpening" type="popupOpening"/>
+                <af:dialog id="d2">
+                    <af:clientListener type="dialog" method="handleDialogEvent"/>
+                    <af:inputText label="Input" id="theExtendedField" rows="5" columns="80" shortDesc="Extended Editor"></af:inputText>
+                    <f:facet name="buttonBar"/>
+                </af:dialog>
+            </af:popup>
+        </af:form>
+    </af:document>
+</f:view>
