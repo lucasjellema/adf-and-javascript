@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:h="http://java.sun.com/jsf/html">
+    <af:document title="intrapage-navigation.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:resource type="javascript" source="/resources/js/AppLibrary.js"/>
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="100px" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Header -->
+                        <af:panelHeader text="Intrapage Navigation" id="ph1">
+                            <af:commandButton text="Scroll down to end" id="b2">
+                                <af:scrollComponentIntoViewBehavior componentId="b1"/>
+                            </af:commandButton>
+                        </af:panelHeader>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                        <!-- Content -->
+                        <h:panelGroup id="pg1">
+                            <h:graphicImage url="https://www.amis.nl/files/Beeld_1.jpg" id="gi1"/>
+                            <af:inputText label="Text Area" id="it1" rows="10"/>
+                            <h:graphicImage url="https://www.amis.nl/files/iStock-5430854081.jpg" id="gi2"/>
+                            <af:listView value="#{bindings.CountriesDataType.collectionModel}" var="item"
+                                         emptyText="#{bindings.CountriesDataType.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                         fetchSize="#{bindings.CountriesDataType.rangeSize}" id="lv1">
+                                <af:listItem id="li1">
+                                    <af:panelGroupLayout layout="horizontal" id="pgl2">
+                                        <f:facet name="separator">
+                                            <af:spacer width="10" id="s1"/>
+                                        </f:facet>
+                                        <af:outputFormatted value="#{item.bindings.continent.inputValue}" id="of1"/>
+                                        <af:outputFormatted value="#{item.bindings.name.inputValue}" id="of2"/>
+                                        <af:outputFormatted value="#{item.bindings.population.inputValue}" id="of3">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.CountriesDataType.hints.population.format}"/>
+                                        </af:outputFormatted>
+                                    </af:panelGroupLayout>
+                                </af:listItem>
+                            </af:listView>
+                            <h:graphicImage url="https://www.amis.nl/files/iStock-504247348.jpg" id="gi3"/>
+                            <af:commandButton text="End" id="b1" clientComponent="true"/>
+                        </h:panelGroup>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>
