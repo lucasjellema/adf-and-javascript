@@ -7,7 +7,7 @@
     <from-view-id>/main.jsf</from-view-id>
     <navigation-case>
       <from-outcome>html5</from-outcome>
-      <to-view-id>/simple-input-number.jsf</to-view-id>
+      <to-view-id>/html5.jsf</to-view-id>
     </navigation-case>
     <navigation-case>
       <from-outcome>simple</from-outcome>
@@ -20,6 +20,14 @@
     <navigation-case>
       <from-outcome>thegrid</from-outcome>
       <to-view-id>/TheGrid.jsf</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>client2server</from-outcome>
+      <to-view-id>/client-to-server.jsf</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>popupeditor</from-outcome>
+      <to-view-id>/popupeditor.jsf</to-view-id>
     </navigation-case>
   </navigation-rule>
 </faces-config>

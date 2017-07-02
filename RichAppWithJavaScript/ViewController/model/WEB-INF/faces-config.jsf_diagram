@@ -48,18 +48,6 @@
    </Page>
    <NavigationCase
       islink="true"
-      id="NavigationCase6"
-      from="Page2"
-      to="Page5">
-      <property
-         name="description">Navigation Case</property>
-      <property
-         name="fromOutcome">html5</property>
-      <property
-         name="sdm:polyPoints">R50,212.5,158.57422,510.32812,72.53711,L50</property>
-   </NavigationCase>
-   <NavigationCase
-      islink="true"
       id="NavigationCase7"
       from="Page2"
       to="Page3">
@@ -68,7 +56,7 @@
       <property
          name="fromOutcome">simple</property>
       <property
-         name="sdm:polyPoints">R54,212.5,162.07422,633.2334,231.53711,L50</property>
+         name="sdm:polyPoints">R50,214.16469,158.57422,633.2334,231.53711,L50</property>
    </NavigationCase>
    <NavigationCase
       islink="true"
@@ -104,5 +92,70 @@
          name="fromOutcome">thegrid</property>
       <property
          name="sdm:polyPoints">B50,171.5,212.57422,190.47363,311.5371,T50</property>
+   </NavigationCase>
+   <Page
+      id="Page11">
+      <property
+         name="jspName">/html5.jsf</property>
+      <property
+         name="wildcard">false</property>
+   </Page>
+   <NavigationCase
+      islink="true"
+      id="NavigationCase12"
+      from="Page2"
+      to="Page11">
+      <property
+         name="description">Navigation Case</property>
+      <property
+         name="fromOutcome">html5</property>
+      <property
+         name="sdm:polyPoints">L50,130.5,158.57422,20.0,87.0,B50</property>
+   </NavigationCase>
+   <Page
+      id="Page13">
+      <property
+         name="jspName">/client-to-server.jsf</property>
+      <property
+         name="x">405.79688</property>
+      <property
+         name="y">57.038086</property>
+      <property
+         name="wildcard">false</property>
+   </Page>
+   <NavigationCase
+      islink="true"
+      id="NavigationCase14"
+      from="Page2"
+      to="Page13">
+      <property
+         name="description">Navigation Case</property>
+      <property
+         name="fromOutcome">client2server</property>
+      <property
+         name="sdm:polyPoints">R42,212.5,151.57422,364.79688,57.038086,L50</property>
+   </NavigationCase>
+   <Page
+      id="Page15">
+      <property
+         name="jspName">/popupeditor.jsf</property>
+      <property
+         name="x">666.2881</property>
+      <property
+         name="y">365.51855</property>
+      <property
+         name="wildcard">false</property>
+   </Page>
+   <NavigationCase
+      islink="true"
+      id="NavigationCase16"
+      from="Page2"
+      to="Page15">
+      <property
+         name="description">Navigation Case</property>
+      <property
+         name="fromOutcome">popupeditor</property>
+      <property
+         name="sdm:polyPoints">R54,214.65929,162.07422,625.2881,365.5371,L50</property>
    </NavigationCase>
 </SDM>

@@ -1,16 +1,15 @@
 // based on https://technology.amis.nl/2016/03/15/navigating-adf-editable-table-arrow-keys/ 
 // defines the keys that are registered to be handled by the callback function in this script
 var keyRegistry = new Array();
-keyRegistry.push("UP");// UP is giving me a problem, so I use shift UP instead
-keyRegistry.push("shift UP");
-keyRegistry.push("shift DOWN");
+keyRegistry.push("UP");
+keyRegistry.push("DOWN");
 keyRegistry.push("shift LEFT");
 keyRegistry.push("shift RIGHT");
 
 var maxCol = 9;// column H is the last one that is enterable
 // call from onload event on document
 function registerKeyBoardHandler(event) {
-    for (var i = keyRegistry.length - 1;i > 0;i--) {
+    for (var i = keyRegistry.length - 1;i >= 0;i--) {
         var keyStroke = AdfKeyStroke.getKeyStrokeFromMarshalledString(keyRegistry[i]);
         AdfRichUIPeer.registerKeyStroke(event.getSource(), keyStroke, callBack);
     }
@@ -19,7 +18,7 @@ function registerKeyBoardHandler(event) {
 function callBack(keyCode) {
     var ac = AdfPage.PAGE.getActiveComponent();
     var marshalledKeyCode = keyCode.toMarshalledString(keyCode);
-    var verticalMovement = marshalledKeyCode == "shift UP" || marshalledKeyCode == "shift DOWN";
+    var verticalMovement = marshalledKeyCode == "UP" || marshalledKeyCode == "DOWN";
     var horizontalMovement = marshalledKeyCode == "shift LEFT" || marshalledKeyCode == "shift RIGHT";
     if (horizontalMovement || verticalMovement) {
         // Let's try and find out if we are in a table
@@ -50,10 +49,10 @@ function callBack(keyCode) {
             if (verticalMovement) {
                 // ask for the previous/next rowkey
                 switch (marshalledKeyCode) {
-                    case "shift UP":
+                    case "UP":
                         newRowKey = tablePeer._getPreviousRowKeyAndRow(clientId[2]).rowKey;
                         break;
-                    case "shift DOWN":
+                    case "DOWN":
                         newRowKey = tablePeer._getNextRowKeyAndRow(clientId[2]).rowKey;
                         break;
                 }

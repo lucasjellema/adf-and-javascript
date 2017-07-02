@@ -10,7 +10,7 @@
                 <af:gridRow height="50px" id="gr2">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
                         <!-- Header -->
-                        <af:panelHeader text="The Grid - navigate with Shift + Arrow" id="ph1">
+                        <af:panelHeader text="The Grid - navigate with Up/Down and Shift Left/Right" id="ph1">
                             <f:facet name="context"/>
                             <f:facet name="toolbar"/>
                             <f:facet name="menuBar"/>
@@ -44,8 +44,9 @@
                                     <af:convertNumber groupingUsed="false"
                                                       pattern="#{bindings.EmptyGridDataType.hints.Row.format}"/>
                                 </af:inputText>
-                                                    <f:facet name="footer">
-                                    <af:inputText value="Column Totals" shortDesc="Column Totals" id="it1f" readOnly="true"/>
+                                <f:facet name="footer">
+                                    <af:inputText value="Column Totals" shortDesc="Column Totals" id="it1f"
+                                                  readOnly="true"/>
                                 </f:facet>
                             </af:column>
                             <af:column sortProperty="#{bindings.EmptyGridDataType.hints.A.name}" filterable="false"
