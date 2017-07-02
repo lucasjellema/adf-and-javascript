@@ -4,16 +4,24 @@
         xmlns:h="http://java.sun.com/jsf/html">
     <af:document title="intrapage-navigation.jsf" id="d1">
         <af:messages id="m1"/>
-        <af:resource type="javascript" source="/resources/js/AppLibrary.js"/>
+        <af:resource type="javascript" source="/resources/js/AppLibraryIntrapage.js"/>
+        <af:clientListener method="init" type="load"/>
         <af:form id="f1">
             <af:panelGridLayout id="pgl1">
                 <af:gridRow height="100px" id="gr1">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
                         <!-- Header -->
-                        <af:panelHeader text="Intrapage Navigation" id="ph1">
-                            <af:commandButton text="Scroll down to end" id="b2">
+                        <af:panelHeader text="Intrapage Navigation - use ALT E and ALT T to move to End and Top"
+                                        id="ph1">
+                            <af:button text="Scroll down to end" id="b2" clientComponent="true">
                                 <af:scrollComponentIntoViewBehavior componentId="b1"/>
-                            </af:commandButton>
+                            </af:button>
+                            <af:button text="Scroll countries" id="b21" clientComponent="true">
+                                <af:scrollComponentIntoViewBehavior componentId="b3"/>
+                            </af:button>
+                            <af:button text="Scroll into rich text" id="b22" clientComponent="true">
+                                <af:scrollComponentIntoViewBehavior componentId="rte1" subTargetId="targ"/>
+                            </af:button>
                         </af:panelHeader>
                     </af:gridCell>
                 </af:gridRow>
@@ -22,8 +30,15 @@
                         <!-- Content -->
                         <h:panelGroup id="pg1">
                             <h:graphicImage url="https://www.amis.nl/files/Beeld_1.jpg" id="gi1"/>
-                            <af:inputText label="Text Area" id="it1" rows="10"/>
+                            <af:richTextEditor label="Rich Editor" id="rte1" rows="10" columns="80"
+                                               value="#{client2serverBean.text}" clientComponent="true">
+                                <f:facet name="footer"/>
+                            </af:richTextEditor>
                             <h:graphicImage url="https://www.amis.nl/files/iStock-5430854081.jpg" id="gi2"/>
+                            <br/>
+                            <af:button text="Scroll to Top" id="b3" clientComponent="true">
+                                <af:scrollComponentIntoViewBehavior componentId="b2"/>
+                            </af:button>
                             <af:listView value="#{bindings.CountriesDataType.collectionModel}" var="item"
                                          emptyText="#{bindings.CountriesDataType.viewable ? 'No data to display.' : 'Access Denied.'}"
                                          fetchSize="#{bindings.CountriesDataType.rangeSize}" id="lv1">
@@ -42,7 +57,10 @@
                                 </af:listItem>
                             </af:listView>
                             <h:graphicImage url="https://www.amis.nl/files/iStock-504247348.jpg" id="gi3"/>
-                            <af:commandButton text="End" id="b1" clientComponent="true"/>
+                            <br/>
+                            <af:button text="Scroll to Top" id="b1" clientComponent="true">
+                                <af:scrollComponentIntoViewBehavior componentId="b2"/>
+                            </af:button>
                         </h:panelGroup>
                     </af:gridCell>
                 </af:gridRow>
