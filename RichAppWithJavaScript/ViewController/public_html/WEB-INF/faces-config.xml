@@ -37,5 +37,9 @@
       <from-outcome>intrapage</from-outcome>
       <to-view-id>/intrapage-navigation.jsf</to-view-id>
     </navigation-case>
+    <navigation-case>
+      <from-outcome>eventbus</from-outcome>
+      <to-view-id>/client-eventbus.jsf</to-view-id>
+    </navigation-case>
   </navigation-rule>
 </faces-config>

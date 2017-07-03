@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:h="http://java.sun.com/jsf/html">
+    <af:resource type="javascript">
+      function publishColorSelection(color) {
+          publishEvent("color-picker-tf-colorSelectionEvent", 
+          {
+              "selectedColor" : color
+          });
+      }
+
+      function clickRed(evt) {
+          evt.cancel();
+          publishColorSelection('red');
+      }
+
+      function clickYellow(evt) {
+          evt.cancel();
+          publishColorSelection('yellow');
+      }
+
+      function clickBlue(evt) {
+          evt.cancel();
+          publishColorSelection('blue');
+      }
+    </af:resource>
+    <af:panelGridLayout id="pgl1">
+        <af:gridRow height="100%" id="gr1">
+            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                <!-- Content -->
+                <h:panelGroup id="pg1">
+                    <af:button text="Red" id="b1" inlineStyle="color:red;" partialSubmit="false">
+                        <af:clientListener type="action" method="clickRed"/>
+                    </af:button>
+                    <af:button text="Yellow" id="b2" inlineStyle="color:yellow;" partialSubmit="false">
+                        <af:clientListener type="action" method="clickYellow"/>
+                    </af:button>
+                    <af:button text="Blue" id="b3" inlineStyle="color:blue;" partialSubmit="false">
+                        <af:clientListener type="action" method="clickBlue"/>
+                    </af:button>
+                </h:panelGroup>
+            </af:gridCell>
+        </af:gridRow>
+    </af:panelGridLayout>
+</ui:composition>

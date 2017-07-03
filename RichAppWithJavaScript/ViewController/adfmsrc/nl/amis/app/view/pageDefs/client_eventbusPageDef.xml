@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="client_eventbusPageDef"
+                Package="nl.amis.app.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <taskFlow id="contentcontainertaskflowdefinition1"
+              taskFlowId="/WEB-INF/content-container-task-flow-definition.xml#content-container-task-flow-definition"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="mainmenutaskflowdefinition1"
+              taskFlowId="/WEB-INF/main-menutask-flow-definition.xml#main-menutask-flow-definition"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings/>
+</pageDefinition>

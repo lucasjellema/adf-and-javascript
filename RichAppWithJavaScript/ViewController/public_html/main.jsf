@@ -28,6 +28,7 @@
                             <af:link text="Client to Server" id="l5" action="client2server"/>
                             <af:link text="Countries Table" id="l7" action="countries"/>
                             <af:link text="Intrapage Navigation" id="l8" action="intrapage"/>
+                            <af:link text="Client Event Bus" id="l9" action="eventbus"/>
                         </af:panelList>
                     </af:gridCell>
                 </af:gridRow>

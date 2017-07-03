@@ -56,7 +56,7 @@
       <property
          name="fromOutcome">simple</property>
       <property
-         name="sdm:polyPoints">R50,214.16469,158.57422,633.2334,231.53711,L50</property>
+         name="sdm:polyPoints">R50,215.73083,158.57422,633.2334,231.53711,L50</property>
    </NavigationCase>
    <NavigationCase
       islink="true"
@@ -133,7 +133,7 @@
       <property
          name="fromOutcome">client2server</property>
       <property
-         name="sdm:polyPoints">R42,212.5,151.57422,364.79688,57.038086,L50</property>
+         name="sdm:polyPoints">R34,212.5,144.57422,364.79688,57.05664,L50</property>
    </NavigationCase>
    <Page
       id="Page15">
@@ -203,5 +203,28 @@
          name="fromOutcome">intrapage</property>
       <property
          name="sdm:polyPoints">R42,213.48232,151.57422,829.7471,134.53711,L50</property>
+   </NavigationCase>
+   <Page
+      id="Page21">
+      <property
+         name="jspName">/client-eventbus.jsf</property>
+      <property
+         name="x">213.95312</property>
+      <property
+         name="y">16.555664</property>
+      <property
+         name="wildcard">false</property>
+   </Page>
+   <NavigationCase
+      islink="true"
+      id="NavigationCase22"
+      from="Page2"
+      to="Page21">
+      <property
+         name="description">Navigation Case</property>
+      <property
+         name="fromOutcome">eventbus</property>
+      <property
+         name="sdm:polyPoints">T50,171.5,104.57422,213.95312,70.57422,B50</property>
    </NavigationCase>
 </SDM>

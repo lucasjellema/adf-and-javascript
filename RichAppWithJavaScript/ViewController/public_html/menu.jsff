@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+   <af:resource type="javascript" source="/resources/js/AppLibraryMenuTaskflow.js"/>
+    <af:panelGridLayout id="pgl1" binding="#{pageFlowScope.menuBean.colorPanelGridLayout}" >
+        <af:gridRow height="100%" id="gr1">
+            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1"
+                         inlineStyle="background-color:#{pageFlowScope.menuBean.color};">
+                <af:selectOneRadio label="Color of your choosing #{pageFlowScope.menuBean.color}" id="colorRadio"
+                                   clientComponent="true" styleClass="colorRadio">
+                    <af:selectItem label="Red" value="red" id="si1"/>
+                    <af:selectItem label="Yellow" value="yellow" id="si2"/>
+                    <af:selectItem label="Blue" value="blue" id="si3"/>
+                    <af:serverListener type="menuColorSelectionEvent" method="#{pageFlowScope.menuBean.handleColorSelection}"/>
+                </af:selectOneRadio>
+            </af:gridCell>
+        </af:gridRow>
+    </af:panelGridLayout>
+</ui:composition>

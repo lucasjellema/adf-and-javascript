@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.0.31" id="DataBindings"
              SeparateXMLFiles="false" Package="nl.amis.app.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
   <pageMap>
     <page path="/TheGrid.jsf" usageId="nl_amis_app_view_TheGridPageDef"/>
     <page path="/Countries.jsf" usageId="nl_amis_app_view_CountriesPageDef"/>
     <page path="/intrapage-navigation.jsf" usageId="nl_amis_app_view_intrapage_navigationPageDef"/>
+    <page path="/contentContainer.jsff" usageId="nl_amis_app_view_contentContainerPageDef"/>
+    <page path="/client-eventbus.jsf" usageId="nl_amis_app_view_client_eventbusPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="nl_amis_app_view_TheGridPageDef" path="nl.amis.app.view.pageDefs.TheGridPageDef"/>
     <page id="nl_amis_app_view_CountriesPageDef" path="nl.amis.app.view.pageDefs.CountriesPageDef"/>
     <page id="nl_amis_app_view_intrapage_navigationPageDef"
           path="nl.amis.app.view.pageDefs.intrapage_navigationPageDef"/>
+    <page id="nl_amis_app_view_contentContainerPageDef" path="nl.amis.app.view.pageDefs.contentContainerPageDef"/>
+    <page id="nl_amis_app_view_client_eventbusPageDef" path="nl.amis.app.view.pageDefs.client_eventbusPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="RichAppPlaceholder" path="nl.amis.app.view.RichAppPlaceholder"/>
