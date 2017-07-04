@@ -12,6 +12,7 @@
     <page path="/intrapage-navigation.jsf" usageId="nl_amis_app_view_intrapage_navigationPageDef"/>
     <page path="/contentContainer.jsff" usageId="nl_amis_app_view_contentContainerPageDef"/>
     <page path="/client-eventbus.jsf" usageId="nl_amis_app_view_client_eventbusPageDef"/>
+    <page path="/databound-json.jsf" usageId="nl_amis_app_view_databound_jsonPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="nl_amis_app_view_TheGridPageDef" path="nl.amis.app.view.pageDefs.TheGridPageDef"/>
@@ -20,6 +21,7 @@
           path="nl.amis.app.view.pageDefs.intrapage_navigationPageDef"/>
     <page id="nl_amis_app_view_contentContainerPageDef" path="nl.amis.app.view.pageDefs.contentContainerPageDef"/>
     <page id="nl_amis_app_view_client_eventbusPageDef" path="nl.amis.app.view.pageDefs.client_eventbusPageDef"/>
+    <page id="nl_amis_app_view_databound_jsonPageDef" path="nl.amis.app.view.pageDefs.databound_jsonPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="RichAppPlaceholder" path="nl.amis.app.view.RichAppPlaceholder"/>

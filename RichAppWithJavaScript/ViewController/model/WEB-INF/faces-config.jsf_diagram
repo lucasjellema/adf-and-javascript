@@ -250,4 +250,27 @@
       <property
          name="sdm:polyPoints">L54,130.5,162.07422,89.85254,214.57422,R50</property>
    </NavigationCase>
+   <Page
+      id="Page25">
+      <property
+         name="jspName">/databound-json.jsf</property>
+      <property
+         name="x">759.4092</property>
+      <property
+         name="y">129.51855</property>
+      <property
+         name="wildcard">false</property>
+   </Page>
+   <NavigationCase
+      islink="true"
+      id="NavigationCase26"
+      from="Page2"
+      to="Page25">
+      <property
+         name="description">Navigation Case</property>
+      <property
+         name="fromOutcome">json</property>
+      <property
+         name="sdm:polyPoints">R38,213.46548,148.07422,718.4092,129.53711,L50</property>
+   </NavigationCase>
 </SDM>

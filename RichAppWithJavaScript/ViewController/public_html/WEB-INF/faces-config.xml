@@ -45,5 +45,9 @@
       <from-outcome>thirdparty</from-outcome>
       <to-view-id>/thirdparty-js-component.jsf</to-view-id>
     </navigation-case>
+    <navigation-case>
+      <from-outcome>json</from-outcome>
+      <to-view-id>/databound-json.jsf</to-view-id>
+    </navigation-case>
   </navigation-rule>
 </faces-config>

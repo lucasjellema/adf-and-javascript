@@ -10,4 +10,15 @@
     <managed-bean-class>nl.amis.app.view.IntrapageNavigationBean</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>
+  
+  <managed-bean id="__3">
+    <managed-bean-name>jsonProviderBean</managed-bean-name>
+    <managed-bean-class>nl.amis.app.view.json.JsonProvider</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+<managed-bean id="__4">
+    <managed-bean-name>jsonProviderBackingBean</managed-bean-name>
+    <managed-bean-class>nl.amis.app.view.json.JsonProviderBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="databound_jsonPageDef"
+                Package="nl.amis.app.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CountriesDataType" RangeSize="25" DataControl="RichAppPlaceholder" id="CountriesDataTypeIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="CountriesDataTypeIterator" id="CountriesDataType">
+      <nodeDefinition DefName="nl.amis.app.view.prototype.CountriesDataType" Name="CountriesDataType0">
+        <AttrNames>
+          <Item Value="name"/>
+          <Item Value="code"/>
+          <Item Value="continent"/>
+          <Item Value="population"/>
+          <Item Value="area"/>
+          <Item Value="governmentForm"/>
+          <Item Value="birthrate"/>
+          <Item Value="deathrate"/>
+          <Item Value="liveExpectancy"/>
+          <Item Value="url"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

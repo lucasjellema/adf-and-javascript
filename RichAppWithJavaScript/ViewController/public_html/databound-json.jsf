@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="databound-json.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:resource type="javascript" source="/resources/js/AppLibraryDataboundJson.js"/>
+        <af:clientListener method="processJSONPayloads" type="load"/>
+        <f:facet name="metaContainer">
+            <af:resource type="javascript">
+              function processJSONPayloads(evt) {
+                  initializeJsonPayloads();
+              }
+            </af:resource>
+        </f:facet>
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="50px" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Header -->
+                        <af:panelHeader text="Databound JSON" id="ph1"></af:panelHeader>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                        <!-- Content -->
+                        <af:inputText label="x" id="jsonPayloadContainer" styleClass="jsonPayload" visible="false"
+                                      binding="#{jsonProviderBackingBean.jsonContainer}">
+                            <af:clientAttribute name="jsonPayloadAttributes" value="{'attributes':['countryData']}"/>
+                            <af:clientAttribute name="countryData"
+                                                value=" #{jsonProviderBean[bindings.CountriesDataType]}"/>
+                        </af:inputText>
+                        <af:spacer height="50"/>
+                        <af:panelHeader text="Derived from JSON " id="ph2"/>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>
