@@ -6,6 +6,11 @@
         <af:gridRow height="100%" id="gr1">
             <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
                 <!-- Content -->
+                <af:button id="localanchor" clientComponent="true" visible="false"
+                           binding="#{panelboxTaskflowBean.localAnchor}"/>
+                <script type="text/javascript">
+                  localAnchorPanelBox = "#{panelboxTaskflowBean.localAnchorClientId}";
+                </script>
                 <af:panelBox text="Blue Box" id="pbblue" background="light" disclosed="false">
                     <f:facet name="toolbar"/>
                     <h:graphicImage url="https://c.tadst.com/gfx/750x500/blue-moon-tree.jpg?1" id="giblue"/>

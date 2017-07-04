@@ -18,6 +18,22 @@
                         <af:inputText  label="Input" id="theField" autoComplete="off" shortDesc="Using clientListener" >
                             <af:clientListener type="blur" method="toUpper"/>
                         </af:inputText>
+                        <af:panelHeader text="Summation" id="ph2">
+                            <f:facet name="context"/>
+                            <f:facet name="toolbar"/>
+                            <f:facet name="menuBar"/>
+                            <f:facet name="legend"/>
+                            <f:facet name="info"/>
+                            <af:inputText label="Input B" id="numberFieldB" shortDesc="Using clientListener">
+                                <af:clientListener type="blur" method="recalc"/>
+                            <af:inputText label="Input A" id="numberFieldA" shortDesc="Using clientListener">
+                                <af:clientListener type="blur" method="recalc"/>
+                            </af:inputText>
+                            </af:inputText>
+                            <af:inputText label="Total (Sum of A and B)" id="totalNumberField"
+                                          shortDesc="Using clientListener">
+                            </af:inputText>
+                        </af:panelHeader>
                     </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>
