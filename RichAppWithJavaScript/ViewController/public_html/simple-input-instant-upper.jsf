@@ -18,9 +18,21 @@
                         <af:inputText label="Input" id="theField" shortDesc="Cursor moves to end of value after a change is made">
                             <af:clientListener type="keyUp" method="toUpperKeyInput"/>
                         </af:inputText>
-                        <af:inputText label="Second Input" id="theField2" shortDesc="Cursor stays in (or is relocated to) current position">
+                        <af:spacer height="50" />
+                        <af:panelHeader text="Force Desired Input - Uppercase, Numeric, Postal Code (1234DD) " id="ph2">
+                        <af:inputText label="Second Uppercase Input" id="theField2" shortDesc="Cursor stays in (or is relocated to) current position">
                             <af:clientListener type="keyUp" method="forceUppercase"/>
                         </af:inputText>
+                        <af:spacer height="50" />
+                        <af:inputText label="Number Input" id="theNumberField" shortDesc="Only allow numeric input">
+                            <af:clientListener type="keyDown" method="forceNumber"/>
+                        </af:inputText>
+                        <af:spacer height="50" />
+                        <af:inputText label="PostalCode Input" id="thePostalCodeField" shortDesc="Only allow Postal Code of form 1234AB">
+                            <af:clientListener type="keyUp" method="forcePostalCodeUp"/>
+                            <af:clientListener type="keyDown" method="forcePostalCodeDown"/>
+                        </af:inputText>
+                        </af:panelHeader>
                     </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>

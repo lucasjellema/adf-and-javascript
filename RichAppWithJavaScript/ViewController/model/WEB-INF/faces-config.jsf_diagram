@@ -68,7 +68,7 @@
       <property
          name="fromOutcome">keyup</property>
       <property
-         name="sdm:polyPoints">R58,212.5,165.57422,406.29297,343.57422,L50</property>
+         name="sdm:polyPoints">R66,212.5,172.57422,406.29297,343.57422,L50</property>
    </NavigationCase>
    <Page
       id="Page9">
@@ -110,7 +110,7 @@
       <property
          name="fromOutcome">html5</property>
       <property
-         name="sdm:polyPoints">L50,130.5,158.57422,20.0,87.0,B50</property>
+         name="sdm:polyPoints">L46,130.5,155.07422,20.0,87.0,B50</property>
    </NavigationCase>
    <Page
       id="Page13">
@@ -156,7 +156,7 @@
       <property
          name="fromOutcome">popupeditor</property>
       <property
-         name="sdm:polyPoints">R54,214.65929,162.07422,625.2881,365.5371,L50</property>
+         name="sdm:polyPoints">R58,214.62651,165.57422,625.2881,365.5371,L50</property>
    </NavigationCase>
    <Page
       id="Page32">
@@ -226,5 +226,28 @@
          name="fromOutcome">eventbus</property>
       <property
          name="sdm:polyPoints">T50,171.5,104.57422,213.95312,70.57422,B50</property>
+   </NavigationCase>
+   <Page
+      id="Page23">
+      <property
+         name="jspName">/thirdparty-js-component.jsf</property>
+      <property
+         name="x">48.85254</property>
+      <property
+         name="y">214.55566</property>
+      <property
+         name="wildcard">false</property>
+   </Page>
+   <NavigationCase
+      islink="true"
+      id="NavigationCase24"
+      from="Page2"
+      to="Page23">
+      <property
+         name="description">Navigation Case</property>
+      <property
+         name="fromOutcome">thirdparty</property>
+      <property
+         name="sdm:polyPoints">L54,130.5,162.07422,89.85254,214.57422,R50</property>
    </NavigationCase>
 </SDM>

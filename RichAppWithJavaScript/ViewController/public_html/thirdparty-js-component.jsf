@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:h="http://java.sun.com/jsf/html">
+<!-- based on http://www.awasthiashish.com/search/label/javascript#sthash.R1Xw2cG4.00b48pG9.dpbs -->
+    <af:document title="thirdparty-js-components.jsf" id="d1">
+        <af:resource type="javascript" source="/resources/js/AppLibraryThirdParty.js"/>
+        <af:clientListener method="init" type="load"/>
+        <af:resource type="javascript" source="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></af:resource>
+        <af:resource type="javascript" source="/resources/js/ddpowerzoomer.js"/>
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="50px" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Header -->
+                        <af:panelHeader text="3rd Party JavaScript Components" id="ph1"></af:panelHeader>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                        <!-- Content -->
+                        <h:graphicImage url="http://cdn.wonderfulengineering.com/wp-content/uploads/2014/03/high-resolution-wallpapers-12-1024x640.jpg"
+                                       id="vaticanPicture" height="350" width="500" />
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>

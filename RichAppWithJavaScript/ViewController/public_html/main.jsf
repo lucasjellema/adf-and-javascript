@@ -29,6 +29,7 @@
                             <af:link text="Countries Table" id="l7" action="countries"/>
                             <af:link text="Intrapage Navigation" id="l8" action="intrapage"/>
                             <af:link text="Client Event Bus" id="l9" action="eventbus"/>
+                            <af:link text="Integrate 3rd party JavaScript components" id="l10" action="thirdparty"/>
                         </af:panelList>
                     </af:gridCell>
                 </af:gridRow>

@@ -1,4 +1,3 @@
-
 // https://technology.amis.nl/2016/06/30/force-text-to-uppercase-in-richinputtext-as-the-user-is-typing-make-sure-the-cursor-stays-in-one-place/
 /* source: http://stackoverflow.com/questions/2897155/get-cursor-position-in-characters-within-a-text-input-field */
 function getCaretPosition(oField) {
@@ -70,4 +69,61 @@ function forceUppercase(evt) {
 function toUpperKeyInput(evt) {
     var comp = evt.getSource();
     comp.setValue(comp.getSubmittedValue().toUpperCase());
+}
+
+function forceNumber(evt) {
+    //TODO cater for decimal point and other numeric characters
+    var key = evt.getKeyCode();
+    if ((key < 48 || key > 57 ) && (key!= 8 && key!=46 && key!= 37 && key!=39)) {
+        evt.cancel();
+    }
+}
+
+function forcePostalCodeDown(evt) {
+    //TODO filter on evt.getKeyCode() represents a lower case character and otherwise do nothing
+    // extract the ADF Faces Rich Client Component - presumably a RichInputText
+    var comp = evt.getSource();
+    // get the rich client component id - because from it we can derive the identitier for the DOM input element
+    var adfComponentClientId = comp.getClientId();
+    // get hold of the DOM element into which the user is typing text
+    var elem = document.getElementById(adfComponentClientId + '::content');
+    // find the current position of the cursor in the input element
+    var currentCaret = getCaretPosition(elem);
+    var key = evt.getKeyCode();
+    console.log("keycode "+key);
+    if (currentCaret < 4) {
+        // key 8 = backspace, key 46 = del, 37 and 39 left and right arrow
+        if ((key < 48 || key > 57) && (key!= 8 && key!=46 && key!= 37 && key!=39)) {
+            evt.cancel();
+        }
+    }
+    else if (currentCaret > 5) {
+        // not more than 6 characters
+        if ((key!= 8 && key!=46 && key!= 37 && key!=39)) {
+            evt.cancel();
+        }
+    }
+    else {
+
+        // only allow letters
+        if (key < 65 || key > 90) {
+            evt.cancel();
+        }
+    }
+
+}
+
+function forcePostalCodeUp(evt) {
+    // extract the ADF Faces Rich Client Component - presumably a RichInputText
+    var comp = evt.getSource();
+    // get the rich client component id - because from it we can derive the identitier for the DOM input element
+    var adfComponentClientId = comp.getClientId();
+    // get hold of the DOM element into which the user is typing text
+    var elem = document.getElementById(adfComponentClientId + '::content');
+    // find the current position of the cursor in the input element
+    var currentCaret = getCaretPosition(elem);
+    comp.setValue(comp.getSubmittedValue().toUpperCase());
+    // return the cursor to the position it was at
+    setCaretPosition(elem, currentCaret);
+
 }

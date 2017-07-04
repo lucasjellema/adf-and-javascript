@@ -41,5 +41,9 @@
       <from-outcome>eventbus</from-outcome>
       <to-view-id>/client-eventbus.jsf</to-view-id>
     </navigation-case>
+    <navigation-case>
+      <from-outcome>thirdparty</from-outcome>
+      <to-view-id>/thirdparty-js-component.jsf</to-view-id>
+    </navigation-case>
   </navigation-rule>
 </faces-config>
