@@ -13,12 +13,15 @@ function handeJsonPayloadContainer(container) {
     //loop over all clientAttribute names and fetch the value for each of them
     for (i = 0; i < clientAtts .length; i++) {
         // get the value for a specific Client Attribute 
-        var value = JSON.parse(adfContainer.getProperty(clientAtts[i]));
+        var pay = adfContainer.getProperty(clientAtts[i]);
+console.log(pay.substring(2900,2940));
+        var value = JSON.parse(pay);
+
         // here is the place and time to pass the JSON payload to a place where JET can access it (or store in a global JS variable)
         jsonData[clientAtts[i]]= value;
-        alert(JSON.stringify(jsonData[clientAtts[i]].attributes));
-    };//for
-    
+        //alert(JSON.stringify(jsonData[clientAtts[i]].attributes));
+        console.log("Refreshed jsonData["+clientAtts[i]+"]; now contains "+jsonData[clientAtts[i]].values.length +" objects");
+    };//for    
 }
 
 function initializeJsonPayloads() {
@@ -29,5 +32,35 @@ function initializeJsonPayloads() {
     for (i = 0; i < jsonContainers.length; i++) {
       handeJsonPayloadContainer(jsonContainers[i]);
     };//for
+google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawMultSeries);
 }
 
+
+function drawMultSeries() {
+var countryData = jsonData["countryData"].values;
+var headers = ['Country', 'Population','Area'];
+
+var headers = ['Country', 'Population','Area'];
+var cdata = [headers];
+for (var i=0;i<countryData.length;i++){
+    cdata.push([countryData[i].name,parseInt(countryData[i].population),parseInt(countryData[i].area)]);
+    
+}//for
+      var data = google.visualization.arrayToDataTable(cdata);
+
+      var options = {
+        title: 'Countries in Continent',
+        chartArea: {width: '50%'},
+        hAxis: {
+          title: 'Total Population',
+          minValue: 0
+        },
+        vAxis: {
+          title: 'Countryy'
+        }
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }

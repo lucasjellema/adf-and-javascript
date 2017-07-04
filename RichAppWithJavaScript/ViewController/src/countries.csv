@@ -38,7 +38,7 @@ Bulgaria,BG,Europe,,7144653,110879,354,parliamentary republic,Lew,BGN,359,8.8,14
 Burkina Faso,BF,Africa,,19512533,274200,0,Presidential republic,Franc,XOF,226,41.6,11.5,55.5,https://www.laenderdaten.info/Afrika/Burkina-Faso/index.php
 Burundi,BI,Africa,,11099298,27830,0,Presidential republic,Franc,BIF,257,41.7,9,60.5,https://www.laenderdaten.info/Afrika/Burundi/index.php
 Chile,CL,South America,,17650114,756102,6435,Presidential republic,Peso,CLP,56,13.7,6.1,78.8,https://www.laenderdaten.info/Amerika/Chile/index.php
-China,CN,Asia,,1373541278,9596960,14500,People's republic (communist 	one-party system),Yuan,CNY,86,12.4,7.7,75.5,https://www.laenderdaten.info/Asien/China/index.php
+China,CN,Asia,,1373541278,9596960,14500,Peoples republic (communistoneparty system),Yuan,CNY,86,12.4,7.7,75.5,https://www.laenderdaten.info/Asien/China/index.php
 Cook Islands,CK,Oceania,,9556,236,120,parliamentary democracy,Dollar,NZD,682,14.1,8.3,75.8,https://www.laenderdaten.info/Ozeanien/Cookinseln/index.php
 Costa Rica,CR,Central America,,4872543,51100,1290,Presidential republic,Colón,CRC,506,15.7,4.6,78.6,https://www.laenderdaten.info/Amerika/Costa-Rica/index.php
 Curacao,CW,America,,149035,444,364,parliamentary republic,Gulden,ANG,599-9,13.8,8.3,78.3,https://www.laenderdaten.info/Amerika/Curacao/index.php
@@ -112,9 +112,9 @@ Comoros,KM,Africa,,794678,2235,340,Federal presidential republic,Franc,KMF,269,2
 Republic of the Congo,CG,Africa,,4852412,342000,169,Presidential republic,Franc,CDF,242,35.1,9.7,59.3,https://www.laenderdaten.info/Afrika/Kongo-Brazzaville/index.php
 Kosovo,XK,Europe,,1883018,10887,0,parliamentary republic,Euro,EUR,383,0,0,69,https://www.laenderdaten.info/Europa/Kosovo/index.php
 Croatia,HR,Europe,,4313707,56594,5835,parliamentary republic,Kuna,HRK,385,9,12.1,75.9,https://www.laenderdaten.info/Europa/Kroatien/index.php
-Cuba,CU,North America,,11179995,110860,3735,Republic (communist one-party system),Peso,CUP,53,10.8,8.6,78.7,https://www.laenderdaten.info/Amerika/Kuba/index.php
+Cuba,CU,North America,,11179995,110860,3735,Republic (communistoneparty system),Peso,CUP,53,10.8,8.6,78.7,https://www.laenderdaten.info/Amerika/Kuba/index.php
 Kuwait,KW,Asia,,2832776,17818,499,constitutional monarchy,Dinar,KWD,965,19.6,2.2,78,https://www.laenderdaten.info/Asien/Kuwait/index.php
-Laos,LA,Asia,,7019073,236800,0,Republic (communist one-party system),Kip,LAK,856,23.9,7.5,64.3,https://www.laenderdaten.info/Asien/Laos/index.php
+Laos,LA,Asia,,7019073,236800,0,Republic (communistoneparty system),Kip,LAK,856,23.9,7.5,64.3,https://www.laenderdaten.info/Asien/Laos/index.php
 Lesotho,LS,Africa,,1953070,30355,0,Parliamentary constitutional monarchy,Loti,LSL,266,25.1,14.9,53,https://www.laenderdaten.info/Afrika/Lesotho/index.php
 Latvia,LV,Europe,,1965686,64589,498,parliamentary republic,Euro,EUR,371,9.9,14.4,74.5,https://www.laenderdaten.info/Europa/Lettland/index.php
 Lebanon,LB,Asia,,6237738,10400,225,parliamentary republic,Pfund,LBP,961,14.4,4.9,77.6,https://www.laenderdaten.info/Asien/Libanon/index.php
@@ -157,7 +157,7 @@ Netherlands Antilles,AN,North America,,227049,800,0,territory of the Netherlands
 Niger,NE,Africa,,18638600,1267000,0,Semi-presidential republic,Franc,XOF,227,44.8,12.1,55.5,https://www.laenderdaten.info/Afrika/Niger/index.php
 Nigeria,NG,Africa,,186053386,923768,853,Federal presidential republic,Naira,NGN,234,37.3,12.7,53.4,https://www.laenderdaten.info/Afrika/Nigeria/index.php
 Niue,NU,Oceania,,1190,260,64,parliamentary democracy,Dollar,NZD,683,0,0,0,https://www.laenderdaten.info/Ozeanien/Niue/index.php
-North Korea,KP,Asia,,25115311,120538,2495,Peoples republic (communist one-party system),Won,KPW,850,14.6,9.3,70.4,https://www.laenderdaten.info/Asien/Nordkorea/index.php
+North Korea,KP,Asia,,25115311,120538,2495,Peoples republic (communistoneparty system),Won,KPW,850,14.6,9.3,70.4,https://www.laenderdaten.info/Asien/Nordkorea/index.php
 Northern Mariana Islands,MP,Oceania,,53467,464,1482,Presidential democracy,Dollar,USD,1-670,17.2,3.8,78,https://www.laenderdaten.info/Ozeanien/Noerdliche-Marianen/index.php
 Norfolk Island,NF,Australia,,2210,36,32,Parliamentary democracy (territory of Australia),Dollar,AUD,6723,0,0,0,https://www.laenderdaten.info/Australien/Norfolkinsel/index.php
 Norway,NO,Europe,,5265158,323802,25148,Parliamentary constitutional monarchy,Krone,NOK,47,12.2,8.1,81.8,https://www.laenderdaten.info/Europa/Norwegen/index.php
@@ -241,7 +241,7 @@ Venezuela,VE,South America,,30912302,912050,2800,Federal presidential republic,B
 United Arab Emirates,AE,Asia,,5927482,83600,1318,Federation of autonomous monarchies,Dirham,AED,971,15.3,2,77.5,https://www.laenderdaten.info/Asien/Arabische-Emirate/index.php
 United States,US,North America,,323995528,9826675,19924,Federal presidential republic,Dollar,USD,1,12.5,8.2,79.8,https://www.laenderdaten.info/Amerika/USA/index.php
 United Kingdom,GB,Europe,,64430428,243610,12429,Parliamentary constitutional monarchy,Pfund,GBP,44,12.1,9.4,80.7,https://www.laenderdaten.info/Europa/Vereinigtes-Koenigreich/index.php
-Vietnam,VN,Asia,,95261021,331210,3444,Republic (communist one-party system),Dong,VND,84,15.7,5.9,73.4,https://www.laenderdaten.info/Asien/Vietnam/index.php
+Vietnam,VN,Asia,,95261021,331210,3444,Republic (communistoneparty system),Dong,VND,84,15.7,5.9,73.4,https://www.laenderdaten.info/Asien/Vietnam/index.php
 Wallis and Futuna,WF,Oceania,,15664,142,129,Parliamentary democracy (territory of France),Franc,XPF,681,13.3,5.2,79.7,https://www.laenderdaten.info/Ozeanien/Wallis-und-Futuna/index.php
 Christmas Island,CX,Australia,,2205,135,139,(non-self-governing territory of Australia),Dollar,AUD,6724,0,0,0,https://www.laenderdaten.info/Australien/Weihnachtsinsel/index.php
 Western Sahara,EH,Africa,,587020,266000,1110,republic,Dirham,MAD,,29.8,8.2,63,https://www.laenderdaten.info/Afrika/Westsahara/index.php

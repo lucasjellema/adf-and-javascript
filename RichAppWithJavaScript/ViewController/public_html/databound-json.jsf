@@ -4,12 +4,14 @@
     <af:document title="databound-json.jsf" id="d1">
         <af:messages id="m1"/>
         <af:resource type="javascript" source="/resources/js/AppLibraryDataboundJson.js"/>
+        <af:resource type="javascript" source="https://www.gstatic.com/charts/loader.js"/>
         <af:clientListener method="processJSONPayloads" type="load"/>
         <f:facet name="metaContainer">
             <af:resource type="javascript">
               function processJSONPayloads(evt) {
                   initializeJsonPayloads();
               }
+              
             </af:resource>
         </f:facet>
         <af:form id="f1">
@@ -25,12 +27,40 @@
                         <!-- Content -->
                         <af:inputText label="x" id="jsonPayloadContainer" styleClass="jsonPayload" visible="false"
                                       binding="#{jsonProviderBackingBean.jsonContainer}">
+                            <!-- initialize JS variable jsonData['countryData'] with data based on bindings.CountriesInContinentDataType data binding -->          
                             <af:clientAttribute name="jsonPayloadAttributes" value="{'attributes':['countryData']}"/>
                             <af:clientAttribute name="countryData"
-                                                value=" #{jsonProviderBean[bindings.CountriesDataType]}"/>
+                                                value=" #{jsonProviderBean[bindings.CountriesInContinentDataType]}"/>
                         </af:inputText>
                         <af:spacer height="50"/>
+                        <div id="chart_div"></div>
                         <af:panelHeader text="Derived from JSON " id="ph2"/>
+                        <af:panelGroupLayout id="pgl2">
+                            <af:selectOneChoice id="nl1" autoSubmit="true"
+                                                value="#{bindings.ContinentsDataType.inputValue}"
+                                                label="#{bindings.ContinentsDataType.label}">
+                                <f:selectItems value="#{bindings.ContinentsDataType.items}" id="si1"/>
+                            </af:selectOneChoice>
+                            <af:panelHeader text="Details" partialTriggers="nl1" id="ph3">
+                                <af:listView value="#{bindings.CountriesInContinentDataType.collectionModel}" var="item"
+                                             emptyText="#{bindings.CountriesInContinentDataType.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                             fetchSize="#{bindings.CountriesInContinentDataType.rangeSize}" id="lv1">
+                                    <af:listItem id="li1">
+                                        <af:panelGroupLayout layout="horizontal" id="pgl3">
+                                            <f:facet name="separator">
+                                                <af:spacer width="10" id="s1"/>
+                                            </f:facet>
+                                            <af:outputFormatted value="#{item.bindings.name.inputValue}" id="of1"/>
+                                            <af:outputFormatted value="#{item.bindings.population.inputValue}"
+                                                                id="of2"/>
+                                            <af:outputFormatted value="#{item.bindings.area.inputValue}" id="of3"/>
+                                            <af:outputFormatted value="#{item.bindings.birthrate.inputValue}" id="of4"/>
+                                            <af:outputFormatted value="#{item.bindings.url.inputValue}" id="of5"/>
+                                        </af:panelGroupLayout>
+                                    </af:listItem>
+                                </af:listView>
+                            </af:panelHeader>
+                        </af:panelGroupLayout>
                     </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/placeholder"
+  Name="ContinentsDataType"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true">
+  <ViewAttribute
+    Name="name"
+    Type="java.lang.String"
+    PrimaryKey="true"/>
+  <ViewAttribute
+    Name="code"
+    Type="java.lang.String"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="name"/>
+  </AttrArray>
+  <ViewLinkAccessor
+    Name="CountriesInContinentDataType"
+    ViewLink="nl.amis.app.view.prototype.DTLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <StaticList
+    Name="ContinentsDataType"
+    Rows="8"
+    Columns="2"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      xmlns="http://xmlns.oracle.com/bc4j"
+      PropertiesFile="nl.amis.app.view.ViewControllerBundle"/>
+  </ResourceBundle>
+</ViewObject>

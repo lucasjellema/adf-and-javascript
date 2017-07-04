@@ -12,4 +12,16 @@
   <ViewUsage
     Name="CountriesDataType"
     ViewObjectName="nl.amis.app.view.prototype.CountriesDataType"/>
+  <ViewUsage
+    Name="ContinentsDataType"
+    ViewObjectName="nl.amis.app.view.prototype.ContinentsDataType"/>
+  <ViewUsage
+    Name="CountriesInContinentDataType"
+    ViewObjectName="nl.amis.app.view.prototype.CountriesInContinentDataType"/>
+  <ViewLinkUsage
+    Name="DTLink"
+    ViewLinkObjectName="nl.amis.app.view.prototype.DTLink"
+    SrcViewUsageName="nl.amis.app.view.prototype.RichAppPlaceholder.ContinentsDataType"
+    DstViewUsageName="nl.amis.app.view.prototype.RichAppPlaceholder.CountriesInContinentDataType"
+    Reversed="false"/>
 </AppModule>

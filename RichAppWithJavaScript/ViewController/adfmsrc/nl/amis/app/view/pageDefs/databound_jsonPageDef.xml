@@ -4,7 +4,11 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="CountriesDataType" RangeSize="25" DataControl="RichAppPlaceholder" id="CountriesDataTypeIterator"/>
+    <iterator Binds="CountriesDataType" RangeSize="120" DataControl="RichAppPlaceholder" id="CountriesDataTypeIterator"/>
+    <iterator Binds="ContinentsDataType" RangeSize="25" DataControl="RichAppPlaceholder"
+              id="ContinentsDataTypeIterator"/>
+    <iterator Binds="CountriesInContinentDataType" RangeSize="75" DataControl="RichAppPlaceholder"
+              id="CountriesInContinentDataTypeIterator"/>
   </executables>
   <bindings>
     <tree IterBinding="CountriesDataTypeIterator" id="CountriesDataType">
@@ -15,10 +19,26 @@
           <Item Value="continent"/>
           <Item Value="population"/>
           <Item Value="area"/>
-          <Item Value="governmentForm"/>
           <Item Value="birthrate"/>
           <Item Value="deathrate"/>
           <Item Value="liveExpectancy"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <navigationlist IterBinding="ContinentsDataTypeIterator" ListOperMode="navigation"
+                    ListIter="ContinentsDataTypeIterator" id="ContinentsDataType" DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="name"/>
+      </AttrNames>
+    </navigationlist>
+    <tree IterBinding="CountriesInContinentDataTypeIterator" id="CountriesInContinentDataType">
+      <nodeDefinition DefName="nl.amis.app.view.prototype.CountriesInContinentDataType"
+                      Name="CountriesInContinentDataType0">
+        <AttrNames>
+          <Item Value="name"/>
+          <Item Value="population"/>
+          <Item Value="area"/>
+          <Item Value="birthrate"/>
           <Item Value="url"/>
         </AttrNames>
       </nodeDefinition>
