@@ -1,5 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:h="http://java.sun.com/jsf/html">
+    <af:resource type="javascript">
+      subscribeToEvent("newBackgroundColorEvent", handleBackgroundColorSelection);
+
+      function handleBackgroundColorSelection(payload) {
+          console.log("BackgroundColorSelectionEvent consumed in contentContainer" + JSON.stringify(payload));
+          //find output component for second part of statement
+          var statementPart2 = AdfPage.PAGE.findComponentByAbsoluteId("r2:0:statementPart2");
+          statementPart2.setValue(payload.statement.split("|")[1]);
+
+      }
+    </af:resource>
     <af:panelGridLayout id="pgl1">
         <af:gridRow height="50px" id="gr2">
             <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
@@ -10,9 +22,14 @@
         <af:gridRow height="100%" id="gr1">
             <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
                 <!-- Content -->
-                
-                <af:region value="#{bindings.colorpickertaskflowdefinition1.regionModel}" id="r1"/>
+                <h:panelGroup id="pg1">
+                    <af:region value="#{bindings.colorpickertaskflowdefinition1.regionModel}" id="r1"/>
+                                    <af:outputText id="statementPart2" clientComponent="true" value="...!" />
+
+                </h:panelGroup>
             </af:gridCell>
+            
+            
         </af:gridRow>
     </af:panelGridLayout>
 </ui:composition>

@@ -3,39 +3,43 @@
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="client-eventbus.jsf" id="doc">
         <af:resource type="javascript" source="/resources/js/AppLibraryClientEventbus.js"/>
-                <af:clientListener method="init" type="load"/>
-             
-
+        <af:clientListener method="init" type="load"/>
         <af:form id="f1">
-      <af:panelGridLayout id="pgl1">
-        <af:gridRow height="50px" id="gr1">
-          <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
-            <!-- Header -->
-            <af:panelHeader text="ClientSide EventBus Demo - Main Page" id="ph1">
-              <f:facet name="context"/>
-              <f:facet name="toolbar"/>
-              <f:facet name="menuBar"/>
-              <f:facet name="legend"/>
-              <f:facet name="info"/>
-            </af:panelHeader>
-          </af:gridCell>
-        </af:gridRow>
-        <af:gridRow height="100%" id="gr2">
-          <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
-            <!-- Content -->
-            <af:panelSplitter id="ps1">
-              <f:facet name="first">
-                <af:region value="#{bindings.mainmenutaskflowdefinition1.regionModel}" id="r1"/>
-                
-              </f:facet>
-              <f:facet name="second">
-                <af:region value="#{bindings.contentcontainertaskflowdefinition1.regionModel}" id="r2"/>
-                
-              </f:facet>
-            </af:panelSplitter>
-          </af:gridCell>
-        </af:gridRow>
-      </af:panelGridLayout>
-    </af:form>
-  </af:document>
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="50px" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                        <!-- Header -->
+                        <af:panelHeader text="ClientSide EventBus Demo - Main Page" id="ph1">
+                            <f:facet name="context"/>
+                            <f:facet name="toolbar"/>
+                            <f:facet name="menuBar"/>
+                            <f:facet name="legend"/>
+                            <f:facet name="info"/>
+                        </af:panelHeader>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Content -->
+                        <af:panelSplitter id="ps1">
+                            <f:facet name="first">
+                                <af:region value="#{bindings.mainmenutaskflowdefinition1.regionModel}" id="r1"/>
+                            </f:facet>
+                            <f:facet name="second">
+                                <af:panelSplitter id="ps3" splitterPosition="700">
+                                    <f:facet name="first">
+                                        <af:region value="#{bindings.contentcontainertaskflowdefinition1.regionModel}"
+                                                   id="r2"/>
+                                    </f:facet>
+                                    <f:facet name="second">
+                                        <af:region value="#{bindings.panelboxtaskflowdefinition1.regionModel}" id="r3"/>
+                                    </f:facet>
+                                </af:panelSplitter>
+                            </f:facet>
+                        </af:panelSplitter>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
 </f:view>

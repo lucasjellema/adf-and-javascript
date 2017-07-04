@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+    <af:resource type="javascript" source="/resources/js/AppLibraryPanelboxTaskflow.js"/>
+    <af:panelGridLayout id="pgl1">
+        <af:gridRow height="100%" id="gr1">
+            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                <!-- Content -->
+                <af:panelBox text="Blue Box" id="pbblue" background="light" disclosed="false">
+                    <f:facet name="toolbar"/>
+                    <h:graphicImage url="https://c.tadst.com/gfx/750x500/blue-moon-tree.jpg?1" id="giblue"/>
+                </af:panelBox>
+                <af:panelBox text="Black Box" id="pb2">
+                    <h:graphicImage url="http://suncor.typepad.com/.a/6a0115712a8fa8970c01a510f06d9d970c-800wi"
+                                    id="gib"/>
+                    <f:facet name="toolbar"/>
+                </af:panelBox>
+                <af:panelBox text="Green Box" id="pb3" inlineStyle="background-color:Green;" disclosed="false">
+                    <f:facet name="toolbar"/>
+                    <h:graphicImage url="http://www.archello.com/sites/default/files/imagecache/media_image/story/media/19.%20Green%20Box%20Eco-House.%20Self%20Sufficient%20in%20water%2C%20energy%20and%20food.jpg"
+                                    id="gigreen"/>
+                </af:panelBox>
+                <af:panelBox text="Yellow Box" id="pbyellow" disclosed="false">
+                    <h:graphicImage url="https://qph.ec.quoracdn.net/main-qimg-42b4131dc7e17d7c8d3d50a612e804c6"
+                                    id="giy"/>
+                    <f:facet name="toolbar"/>
+                </af:panelBox>
+                <af:panelBox text="Red Box" id="pbred" disclosed="false">
+                    <h:graphicImage url="https://www.amis.nl/files/Beeld_1.jpg" id="gi1"/>
+                    <f:facet name="toolbar"/>
+                </af:panelBox>
+            </af:gridCell>
+        </af:gridRow>
+    </af:panelGridLayout>
+</ui:composition>

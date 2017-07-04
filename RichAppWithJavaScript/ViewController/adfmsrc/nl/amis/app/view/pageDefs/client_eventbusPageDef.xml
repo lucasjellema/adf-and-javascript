@@ -10,6 +10,9 @@
     <taskFlow id="mainmenutaskflowdefinition1"
               taskFlowId="/WEB-INF/main-menutask-flow-definition.xml#main-menutask-flow-definition"
               activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="panelboxtaskflowdefinition1"
+              taskFlowId="/WEB-INF/panelbox-task-flow-definition.xml#panelbox-task-flow-definition"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings/>
 </pageDefinition>

@@ -12,6 +12,7 @@
                     <af:selectItem label="Blue" value="blue" id="si3"/>
                     <af:serverListener type="menuColorSelectionEvent" method="#{pageFlowScope.menuBean.handleColorSelection}"/>
                 </af:selectOneRadio>
+                <af:outputText id="statementPart1" clientComponent="true" value="..." />
             </af:gridCell>
         </af:gridRow>
     </af:panelGridLayout>

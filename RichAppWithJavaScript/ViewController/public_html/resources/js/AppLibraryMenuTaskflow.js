@@ -1,4 +1,12 @@
 subscribeToEvent("color-picker-tf-colorSelectionEvent", handleColorSelection);
+subscribeToEvent("newBackgroundColorEvent", handleBackgroundColorSelection);
+
+function handleBackgroundColorSelection(payload) {
+    console.log("BackgroundColorSelectionEvent consumed in menutaskflow" + JSON.stringify(payload));
+    //find output component for second part of statement
+    var statementPart1 = AdfPage.PAGE.findComponentByAbsoluteId("r1:0:statementPart1");
+    statementPart1.setValue(payload.statement.split("|")[0]);
+}
 
 function handleColorSelection(payload) {
     console.log("ColorSelectionEvent consumed " + JSON.stringify(payload));
@@ -28,7 +36,6 @@ function handleColorSelection(payload) {
     //for
 }
 //handleColorSelection
-
 function informServerAboutColorSelection(color) {
     // get hold of the component that contains the serverListener - the select one radio
     // get hold of ADF Faces Client Side AdfRichSelectOneRadio object
