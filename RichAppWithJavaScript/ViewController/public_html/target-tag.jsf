@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="target-tag.jsf" id="d1">
+        <!-- based on http://www.ateam-oracle.com/a-hidden-gem-of-adf-faces-12c-the-aftarget-tag/ -->
+        <af:resource type="javascript" source="/resources/js/AppLibrary.js"/>
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="50px" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Header -->
+                        <af:panelHeader text="Target" id="ph1"></af:panelHeader>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                        <!-- Content -->
+                        <af:panelHeader text="Without Target" id="ph23">
+                            <f:facet name="context"/>
+                            <f:facet name="toolbar"/>
+                            <f:facet name="menuBar"/>
+                            <f:facet name="legend"/>
+                            <f:facet name="info"/>
+                            <af:panelFormLayout id="pfl1">
+                                <af:inputText required="true" label="Name" id="it1a"
+                                              value="#{viewScope.targetBean.name}" immediate="true" autoSubmit="true"
+                                              valueChangeListener="#{viewScope.targetBean.nameChanged}">
+                                    <f:validateLength minimum="4"></f:validateLength>
+                                </af:inputText>
+                                <af:inputText required="true" label="Greeting" id="it2a" partialTriggers="it1a" 
+                                              value="#{viewScope.targetBean.greeting}"/>
+                                <af:inputDate label="Date" required="true" id="id1"
+                                              value="#{viewScope.targetBean.date}"/>
+                                <f:facet name="footer">
+                                    <af:panelGroupLayout id="pgl3" layout="horizontal">
+                                        <af:button text="Reset" id="cb2" immediate="true"
+                                                   actionListener="#{viewScope.targetBean.reset}">
+                                            <af:resetActionListener/>
+                                        </af:button>
+                                        <f:facet name="separator">
+                                            <af:spacer width="10" height="10" id="s3"/>
+                                        </f:facet>
+                                    </af:panelGroupLayout>
+                                </f:facet>
+                            </af:panelFormLayout>
+                        </af:panelHeader>
+                        <af:panelHeader text="With Target" id="ph2">
+                            <f:facet name="context"/>
+                            <f:facet name="toolbar"/>
+                            <f:facet name="menuBar"/>
+                            <f:facet name="legend"/>
+                            <f:facet name="info"/>
+                            <af:panelFormLayout id="pfl1b">
+                                <af:inputText required="true" label="Name" id="it1" value="#{viewScope.targetBean.name}"
+                                              autoSubmit="true"
+                                              valueChangeListener="#{viewScope.targetBean.nameChanged}">
+                                    <f:validateLength minimum="4"></f:validateLength>
+                                    <af:target execute="@this" render="it2"/>
+                                </af:inputText>
+                                <af:inputText required="true" label="Greeting" id="it2" 
+                                              value="#{viewScope.targetBean.greeting}"/>
+                                <af:inputDate label="Date" required="true" id="id1v"
+                                              value="#{viewScope.targetBean.date}"/>
+                                <f:facet name="footer">
+                                    <af:panelGroupLayout id="pgl3v" layout="horizontal">
+                                        <af:button text="Reset" id="cb2v"
+                                                   actionListener="#{viewScope.targetBean.reset}">
+                                            <af:target execute="@this" render="@all"/>
+                                        </af:button>
+                                        <f:facet name="separator">
+                                            <af:spacer width="10" height="10" id="s3v"/>
+                                        </f:facet>
+                                    </af:panelGroupLayout>
+                                </f:facet>
+                            </af:panelFormLayout>
+                        </af:panelHeader>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>

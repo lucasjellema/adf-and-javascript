@@ -21,6 +21,8 @@
                         <!-- Content -->
                         <af:panelList id="pl1">
                             <af:link text="Simple Input" id="l1" action="simple"/>
+                            <af:link text="Target" id="l13" action="target"/>
+                            <af:link text="Client Side UI Manipulation" id="l12" action="clientsideui"/>
                             <af:link text="HTML5 Attributes and Listeners" id="l2" action="html5"/>
                             <af:link text="Instant Uppercase (Key Up)" id="l3" action="keyup"/>
                             <af:link text="Popup Editor" id="l6" action="popupeditor"/>

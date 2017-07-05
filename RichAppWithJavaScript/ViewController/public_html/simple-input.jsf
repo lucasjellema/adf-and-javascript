@@ -3,20 +3,38 @@
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="simple-input.jsf" id="d1">
         <af:resource type="javascript" source="/resources/js/AppLibrary.js"/>
+        <af:resource type="javascript">
+          function removeDashes(event) {
+              var inputComp = event.getCurrentTarget();
+              inputComp.setValue(inputComp.getSubmittedValue().replace(/-/g, ''));
+              
+    var theField = inputComp.findComponent("theField");
+    theField.setValue(inputComp.getSubmittedValue().toUpperCase());
+          }
+
+          function highlight(event) {
+              var inputComp = event.getCurrentTarget();
+              inputComp.setProperty("contentStyle", "background-color:yellow;");
+          }
+
+        </af:resource>
         <af:form id="f1">
             <af:panelGridLayout id="pgl1">
                 <af:gridRow height="50px" id="gr1">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
                         <!-- Header -->
-                        <af:panelHeader text="Simple Input " id="ph1">
-                        </af:panelHeader>
+                        <af:panelHeader text="Simple Input " id="ph1"></af:panelHeader>
                     </af:gridCell>
                 </af:gridRow>
                 <af:gridRow height="100%" id="gr2">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
                         <!-- Content -->
-                        <af:inputText  label="Input" id="theField" autoComplete="off" shortDesc="Using clientListener" >
+                        <af:inputText label="Input" id="theField" autoComplete="off" shortDesc="Using clientListener">
                             <af:clientListener type="blur" method="toUpper"/>
+                        </af:inputText>
+                        <af:inputText label="Input" id="theField2" autoComplete="off" shortDesc="Using clientListener">
+                            <af:clientListener type="focus" method="highlight"/>
+                            <af:clientListener type="keyUp" method="removeDashes"/>
                         </af:inputText>
                         <af:panelHeader text="Summation" id="ph2">
                             <f:facet name="context"/>
@@ -26,12 +44,24 @@
                             <f:facet name="info"/>
                             <af:inputText label="Input B" id="numberFieldB" shortDesc="Using clientListener">
                                 <af:clientListener type="blur" method="recalc"/>
+                            </af:inputText>
                             <af:inputText label="Input A" id="numberFieldA" shortDesc="Using clientListener">
                                 <af:clientListener type="blur" method="recalc"/>
                             </af:inputText>
-                            </af:inputText>
                             <af:inputText label="Total (Sum of A and B)" id="totalNumberField"
-                                          shortDesc="Using clientListener">
+                                          shortDesc="Using clientListener"></af:inputText>
+                        </af:panelHeader>
+                        <af:panelHeader text="Validation" id="ph3">
+                            <!-- based on https://tompeez.wordpress.com/2017/01/09/pravent-nav-on-failed-validation/  -->
+                            <af:inputText label="Required Field" id="requiredField"
+                                          shortDesc="Checkout any time you like...">
+                                <af:clientListener method="doNotLeaveRequiredField" type="blur"/>
+                            </af:inputText>
+                            <af:inputText label="Some Field with special validation" id="someField"
+                                          shortDesc="Validation through server... (value 88 is not allowed)">
+                                <af:clientListener method="setFocusWhenValidateFail" type="blur"/>
+                                <af:serverListener type="validateServerListener"
+                                                   method="#{viewScope.inputValidationBean.handleValidationEvent}"/>
                             </af:inputText>
                         </af:panelHeader>
                     </af:gridCell>

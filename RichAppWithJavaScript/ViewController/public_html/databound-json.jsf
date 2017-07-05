@@ -5,15 +5,7 @@
         <af:messages id="m1"/>
         <af:resource type="javascript" source="/resources/js/AppLibraryDataboundJson.js"/>
         <af:resource type="javascript" source="https://www.gstatic.com/charts/loader.js"/>
-        <af:clientListener method="processJSONPayloads" type="load"/>
-        <f:facet name="metaContainer">
-            <af:resource type="javascript">
-              function processJSONPayloads(evt) {
-                  initializeJsonPayloads();
-              }
-              
-            </af:resource>
-        </f:facet>
+        <af:clientListener method="init" type="load"/>
         <af:form id="f1">
             <af:panelGridLayout id="pgl1">
                 <af:gridRow height="50px" id="gr1">
@@ -33,15 +25,17 @@
                                                 value=" #{jsonProviderBean[bindings.CountriesInContinentDataType]}"/>
                         </af:inputText>
                         <af:spacer height="50"/>
-                        <div id="chart_div"></div>
-                        <af:panelHeader text="Derived from JSON " id="ph2"/>
-                        <af:panelGroupLayout id="pgl2">
                             <af:selectOneChoice id="nl1" autoSubmit="true"
                                                 value="#{bindings.ContinentsDataType.inputValue}"
-                                                label="#{bindings.ContinentsDataType.label}">
+                                                label="Select Continent">
                                 <f:selectItems value="#{bindings.ContinentsDataType.items}" id="si1"/>
                             </af:selectOneChoice>
-                            <af:panelHeader text="Details" partialTriggers="nl1" id="ph3">
+                        <af:panelHeader text="Google Chart powered by JSON from Data Binding " id="ph2">
+                            <!-- this is where the client side chart will be written -->
+                        </af:panelHeader>
+                        <af:panelGroupLayout id="pgl2">
+                        <af:spacer height="50"/>
+                            <af:panelHeader text="Country Details in Continent" partialTriggers="nl1" id="ph3">
                                 <af:listView value="#{bindings.CountriesInContinentDataType.collectionModel}" var="item"
                                              emptyText="#{bindings.CountriesInContinentDataType.viewable ? 'No data to display.' : 'Access Denied.'}"
                                              fetchSize="#{bindings.CountriesInContinentDataType.rangeSize}" id="lv1">

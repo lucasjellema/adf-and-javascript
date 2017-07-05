@@ -91,7 +91,7 @@
       <property
          name="fromOutcome">thegrid</property>
       <property
-         name="sdm:polyPoints">B56,175.0,212.57422,190.47363,311.5371,T50</property>
+         name="sdm:polyPoints">B50,171.5,214.97166,190.47363,311.5371,T50</property>
    </NavigationCase>
    <Page
       id="Page11">
@@ -133,7 +133,7 @@
       <property
          name="fromOutcome">client2server</property>
       <property
-         name="sdm:polyPoints">R34,212.5,144.57422,364.79688,57.05664,L50</property>
+         name="sdm:polyPoints">R26,212.5,137.57422,364.79688,57.05664,L50</property>
    </NavigationCase>
    <Page
       id="Page15">
@@ -179,7 +179,7 @@
       <property
          name="fromOutcome">countries</property>
       <property
-         name="sdm:polyPoints">B44,168.0,212.57422,87.430664,296.5371,T50</property>
+         name="sdm:polyPoints">B39,164.5,212.57422,87.430664,296.5371,T50</property>
    </NavigationCase>
    <Page
       id="Page19">
@@ -202,7 +202,7 @@
       <property
          name="fromOutcome">intrapage</property>
       <property
-         name="sdm:polyPoints">R42,213.48232,151.57422,829.7471,134.53711,L50</property>
+         name="sdm:polyPoints">R42,213.52057,151.57422,829.7471,134.53711,L50</property>
    </NavigationCase>
    <Page
       id="Page21">
@@ -271,6 +271,52 @@
       <property
          name="fromOutcome">json</property>
       <property
-         name="sdm:polyPoints">R38,213.46548,148.07422,718.4092,129.53711,L50</property>
+         name="sdm:polyPoints">R34,213.42027,144.57422,718.4092,129.53711,L50</property>
+   </NavigationCase>
+   <Page
+      id="Page27">
+      <property
+         name="jspName">/clientside-ui-manipulation.jsf</property>
+      <property
+         name="x">693.78613</property>
+      <property
+         name="y">324.51855</property>
+      <property
+         name="wildcard">false</property>
+   </Page>
+   <NavigationCase
+      islink="true"
+      id="NavigationCase28"
+      from="Page2"
+      to="Page27">
+      <property
+         name="description">Navigation Case</property>
+      <property
+         name="fromOutcome">clientsideui</property>
+      <property
+         name="sdm:polyPoints">R58,215.95003,165.57422,652.78613,324.5371,L50</property>
+   </NavigationCase>
+   <Page
+      id="Page29">
+      <property
+         name="jspName">/target-tag.jsf</property>
+      <property
+         name="x">321.42285</property>
+      <property
+         name="y">345.51855</property>
+      <property
+         name="wildcard">false</property>
+   </Page>
+   <NavigationCase
+      islink="true"
+      id="NavigationCase30"
+      from="Page2"
+      to="Page29">
+      <property
+         name="description">Navigation Case</property>
+      <property
+         name="fromOutcome">target</property>
+      <property
+         name="sdm:polyPoints">B61,178.5,212.57422,321.42285,291.5371,T50</property>
    </NavigationCase>
 </SDM>

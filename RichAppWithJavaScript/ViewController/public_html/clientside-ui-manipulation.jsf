@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="clientside-ui-manipulation.jsf" id="d1">
+        <af:resource type="javascript" source="/resources/js/AppLibraryClientsideUIManipulation.js"/>
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="150px" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Header -->
+                        <af:panelHeader text="Double click field, double click center image" id="ph1"></af:panelHeader>
+                        <af:inputText label="Label 1" id="it1" clientComponent="true" unsecure="disabled"
+                                      shortDesc="Double Click me; then right click me">
+                            <af:clientListener method="changeInputText" type="dblClick"/>
+                            <af:clientListener method="unchangeInputText" type="contextMenu"/>
+                        </af:inputText>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                        <af:panelGroupLayout id="pgl2" layout="horizontal" clientComponent="true">
+                            <af:image source="http://i2.cdn.cnn.com/cnnnext/dam/assets/161201122707-02-year-in-pictures-2016-restricted-super-169.jpg"
+                                      id="i1" inlineStyle="width:250px;height:200px;"/>
+                            <af:image source="http://i2.cdn.cnn.com/cnnnext/dam/assets/161201122908-05-year-in-pictures-2016-restricted-super-169.jpg"
+                                      id="i2" inlineStyle="width:250px;height:200px;">
+                                <af:clientListener method="changeGroupLayout" type="dblClick"/>
+                            </af:image>
+                            <af:image source="http://i2.cdn.cnn.com/cnnnext/dam/assets/161201130912-28-year-in-pictures-2016-restricted-super-169.jpg"
+                                      id="i3" inlineStyle="width:250px;height:200px;"/>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>

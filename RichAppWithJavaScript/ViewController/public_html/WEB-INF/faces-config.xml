@@ -49,5 +49,13 @@
       <from-outcome>json</from-outcome>
       <to-view-id>/databound-json.jsf</to-view-id>
     </navigation-case>
+    <navigation-case>
+      <from-outcome>clientsideui</from-outcome>
+      <to-view-id>/clientside-ui-manipulation.jsf</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>target</from-outcome>
+      <to-view-id>/target-tag.jsf</to-view-id>
+    </navigation-case>
   </navigation-rule>
 </faces-config>

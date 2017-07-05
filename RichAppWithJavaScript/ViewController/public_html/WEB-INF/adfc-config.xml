@@ -21,4 +21,14 @@
     <managed-bean-class>nl.amis.app.view.json.JsonProviderBean</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>
+  <managed-bean id="__5">
+    <managed-bean-name>inputValidationBean</managed-bean-name>
+    <managed-bean-class>nl.amis.app.view.InputValidationBean</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__6">
+    <managed-bean-name>targetBean</managed-bean-name>
+    <managed-bean-class>nl.amis.app.view.TargetBean</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
 </adfc-config>
