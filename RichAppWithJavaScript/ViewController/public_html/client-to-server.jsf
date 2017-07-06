@@ -33,12 +33,14 @@
                                       value="#{client2serverBean.answer1}"/>
                         <af:inputText label="Q2: Name of Country" id="q2" autoSubmit="true"
                                       shortDesc="(Server Listener) Type name of country (France,UK,Germany,Netherlands,..)">
-                            <af:clientListener type="click" method="qandaListener"/>
+                            <af:clientListener type="blur" method="qandaListener"/>
                             <af:serverListener type="answerMe" method="#{client2serverBean.chattyBot}"/>
                         </af:inputText>
                         <af:inputText label="A2: Capital of Country" id="a2" partialTriggers="q1"
                                       value="#{client2serverBean.answer2}" shortDesc="(asynchronous) "
                                       binding="#{client2serverBean.a2Field}"/>
+                        <af:inputText label="A2-b: Capital of Country" id="a2b" shortDesc="(asynch, pure client side) "
+                                     />
                     </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>

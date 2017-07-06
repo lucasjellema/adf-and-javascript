@@ -20,12 +20,14 @@ function qandaListener(actionEvent) {
         "country" : country
     },
     true);
-    actionEvent.noResponseExpected() ;
+   // actionEvent.noResponseExpected() ;
 }
 
 function publishAnswer(answer) {
-    console.log("received answer: "+JSON.stringify(answer));
-    var capital = answer.answer;
+    console.log("received answer: "+answer);
+    var capital = JSON.parse(answer).answer;
+      var a2b= AdfPage.PAGE.findComponentByAbsoluteId("a2b");
+      a2b.setValue(capital);
 }
 
 var keyRegistry = new Array();

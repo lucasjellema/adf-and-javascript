@@ -27,7 +27,7 @@ private Map<String,String> capitals = new HashMap();
         capitals.put("uk","London");
         capitals.put("france","Paris");
         capitals.put("spain","Madrid");
-        capitals.put("germany","Berling");
+        capitals.put("germany","Berlin");
         capitals.put("belgium","Brussels");
         capitals.put("netherlands","Amsterdam");
         capitals.put("portugal","Lisbon");
