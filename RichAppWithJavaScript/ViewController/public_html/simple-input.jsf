@@ -3,6 +3,7 @@
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="simple-input.jsf" id="d1">
         <af:resource type="javascript" source="/resources/js/AppLibrary.js"/>
+                    <af:clientListener method="init" type="load"/>
         <af:resource type="javascript">
           function removeDashes(event) {
               var inputComp = event.getCurrentTarget();
@@ -15,7 +16,10 @@
           function highlight(event) {
               var inputComp = event.getCurrentTarget();
               inputComp.setProperty("contentStyle", "background-color:yellow;");
+
           }
+
+      
 
         </af:resource>
         <af:form id="f1">
@@ -35,6 +39,7 @@
                         <af:inputText label="Input" id="theField2" autoComplete="off" shortDesc="Using clientListener">
                             <af:clientListener type="focus" method="highlight"/>
                             <af:clientListener type="keyUp" method="removeDashes"/>
+                            
                         </af:inputText>
                         <af:panelHeader text="Summation" id="ph2">
                             <f:facet name="context"/>
@@ -63,6 +68,25 @@
                                 <af:serverListener type="validateServerListener"
                                                    method="#{viewScope.inputValidationBean.handleValidationEvent}"/>
                             </af:inputText>
+                        </af:panelHeader>
+                        <af:panelHeader text="Date" id="phd3">
+                            <!-- // 0 = today
+// 1 = first day of the current month
+// -n = (number) days before today
+// +n = (number) days after today
+//  n = (number) day of the current month
+// feb = 01 - Feb of current year
+// [(d(d))mon | mon(d(d))] = day of month
+//
+// Month:
+// If a 3-letter code for month is used, the code must be in the
+// language of the application (which might depend on user or terminal).
+//
+  -->
+                            <af:inputDate label="Smart Date" id="smartDate"
+                                          shortDesc="Smart Date options: 0 for today, +1 for tomorrow, -1 for yesterday">
+                                <af:clientListener method="convertSmartDate" type="blur"/>
+                            </af:inputDate>
                         </af:panelHeader>
                     </af:gridCell>
                 </af:gridRow>
