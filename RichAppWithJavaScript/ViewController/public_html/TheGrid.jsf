@@ -62,6 +62,7 @@
                                     <af:convertNumber groupingUsed="false"
                                                       pattern="#{bindings.EmptyGridDataType.hints.A.format}"/>
                                     <af:clientListener method="aggregate" type="valueChange"/>
+                                    <af:clientListener method="openPopup('p1')" type="contextMenu"/>
                                 </af:inputText>
                                 <f:facet name="footer">
                                     <af:inputText value="0" shortDesc="Column Total" id="it2f" clientComponent="true"/>
@@ -80,6 +81,7 @@
                                     <af:convertNumber groupingUsed="false"
                                                       pattern="#{bindings.EmptyGridDataType.hints.B.format}"/>
                                     <af:clientListener method="aggregate" type="valueChange"/>
+                                    <af:clientListener method="openPopup('p1')" type="contextMenu"/>
                                 </af:inputText>
                                 <f:facet name="footer">
                                     <af:inputText value="0" shortDesc="Column Total" id="it3f" clientComponent="true"/>
@@ -98,6 +100,7 @@
                                     <af:convertNumber groupingUsed="false"
                                                       pattern="#{bindings.EmptyGridDataType.hints.C.format}"/>
                                     <af:clientListener method="aggregate" type="valueChange"/>
+                                    <af:clientListener method="openPopup('p1')" type="contextMenu"/>
                                 </af:inputText>
                                 <f:facet name="footer">
                                     <af:inputText value="0" shortDesc="Column Total" id="it4f" clientComponent="true"/>
@@ -116,6 +119,7 @@
                                     <af:convertNumber groupingUsed="false"
                                                       pattern="#{bindings.EmptyGridDataType.hints.D.format}"/>
                                     <af:clientListener method="aggregate" type="valueChange"/>
+                                    <af:clientListener method="openPopup('p1')" type="contextMenu"/>
                                 </af:inputText>
                                 <f:facet name="footer">
                                     <af:inputText value="0" shortDesc="Column Total" id="it5f" clientComponent="true"/>
@@ -134,6 +138,7 @@
                                     <af:convertNumber groupingUsed="false"
                                                       pattern="#{bindings.EmptyGridDataType.hints.E.format}"/>
                                     <af:clientListener method="aggregate" type="valueChange"/>
+                                    <af:clientListener method="openPopup('p1')" type="contextMenu"/>
                                 </af:inputText>
                                 <f:facet name="footer">
                                     <af:inputText value="0" shortDesc="Column Total" id="it6f" clientComponent="true"/>
@@ -152,6 +157,7 @@
                                     <af:convertNumber groupingUsed="false"
                                                       pattern="#{bindings.EmptyGridDataType.hints.F.format}"/>
                                     <af:clientListener method="aggregate" type="valueChange"/>
+                                    <af:clientListener method="openPopup('p1')" type="contextMenu"/>
                                 </af:inputText>
                                 <f:facet name="footer">
                                     <af:inputText value="0" shortDesc="Column Total" id="it7f" clientComponent="true"/>
@@ -170,6 +176,7 @@
                                     <af:convertNumber groupingUsed="false"
                                                       pattern="#{bindings.EmptyGridDataType.hints.G.format}"/>
                                     <af:clientListener method="aggregate" type="valueChange"/>
+                                    <af:clientListener method="openPopup('p1')" type="contextMenu"/>
                                 </af:inputText>
                                 <f:facet name="footer">
                                     <af:inputText value="0" shortDesc="Column Total" id="it8f" clientComponent="true"/>
@@ -188,6 +195,7 @@
                                     <af:convertNumber groupingUsed="false"
                                                       pattern="#{bindings.EmptyGridDataType.hints.H.format}"/>
                                     <af:clientListener method="aggregate" type="valueChange"/>
+                                    <af:clientListener method="openPopup('p1')" type="contextMenu"/>
                                 </af:inputText>
                                 <f:facet name="footer">
                                     <af:inputText value="0" shortDesc="Column Total" id="it9f" clientComponent="true"/>
@@ -213,6 +221,16 @@
                     </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>
+            <af:popup id="p1" contentDelivery="immediate">
+                <af:menu text="Smart Copy" id="m11">
+                    <af:commandMenuItem text="Copy to entire row" id="cmi1">
+                        <af:clientListener method="copyToRow" type="action"/>
+                    </af:commandMenuItem>
+                    <af:commandMenuItem text="Copy to column" id="cmi2">
+                        <af:clientListener method="copyToColumn" type="action"/>
+                    </af:commandMenuItem>
+                </af:menu>
+            </af:popup>
         </af:form>
     </af:document>
 </f:view>

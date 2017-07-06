@@ -129,23 +129,24 @@ function aggregate(event) {
 
     // column total
     //using a matcher to split up the clientId 
-    // so we can calculate the new clientId we want to navigate to
+    // so we can calculate the new clientId values for all elements in column
     var clientIdArray = clientId.match("(.*):([0-9]+)(:[^:]+)");
 
     var columnTotal = 0;
     // loop over all rows in the current column, add values 
     var i = 0;
     while (true) {
-        var colComp = AdfPage.PAGE.findComponent(clientIdArray[1] +":" + i+ clientIdArray[3] );
-        if (!colComp) break;
+        var colComp = AdfPage.PAGE.findComponent(clientIdArray[1] + ":" + i + clientIdArray[3]);
+        if (!colComp)
+            break;
         var colValue = colComp.getValue();
         if (colValue && !isNaN(colValue))
             columnTotal = columnTotal + colValue;
-        i++;    
-    }//while
+        i++;
+    }
+    //while
 
-
-    var columnTotalId = clientIdArray[1] +  clientIdArray[3] + "f";
+    var columnTotalId = clientIdArray[1] + clientIdArray[3] + "f";
     var columnTotalComp = AdfPage.PAGE.findComponent(columnTotalId);
     columnTotalComp.setValue(columnTotal);
 
@@ -153,4 +154,71 @@ function aggregate(event) {
 
 function init(event) {
     registerKeyBoardHandler(event);
+}
+
+// smart copy functions
+var globalFieldCopy = null;
+var globalLastVisitedField = null;
+
+/*
+ * Function is called to open a context menu dialog next to the 
+ * selected table cell. It also saves the selected text field 
+ * component reference for later use when pasting the value to 
+ * selected table rows
+ */
+function openPopup(popupId) {
+    return function (evt) {
+        evt.cancel();
+        //get the field reference to copy value from
+        txtField = evt.getSource();
+        //just temporarily remember the field that had focus 
+        //when the popup menu opened. This is to ensure that
+        //fields are only copied when the Copy context menu 
+        //option is used
+        globalLastVisitedField = txtField;
+
+        //the context popup menu should be launched in the table next
+        //to the selected table cell. For this we need to get the cell
+        //handler component's clientId
+        var clientId = txtField.getClientId();
+        //search popup from page root
+        var popup = AdfPage.PAGE.findComponentByAbsoluteId(popupId);
+        //align popup so it renders after the textfield
+        var hints = {
+            align : "end_before", alignId : clientId
+        };
+        popup.show(hints);
+    }
+}
+
+function copyToRow(event) {
+    console.log("copy to row from " + globalLastVisitedField.getClientId());
+    console.log("value to copy = " + globalLastVisitedField.getValue());
+    var clientId = globalLastVisitedField.getClientId();
+    for (var i = 2;i <= maxCol;i++) {
+        var colComp = AdfPage.PAGE.findComponent(clientId.slice(0,  - 1) + i);
+        var colValue = colComp.setValue(globalLastVisitedField.getValue());
+    }
+    //for
+    evt.cancel();
+}
+
+function copyToColumn(event) {
+   console.log("copy to row from " + globalLastVisitedField.getClientId());
+    console.log("value to copy = " + globalLastVisitedField.getValue());
+    var clientId = globalLastVisitedField.getClientId();
+    var clientIdArray = clientId.match("(.*):([0-9]+)(:[^:]+)");
+
+    var columnTotal = 0;
+    // loop over all rows in the current column, set values 
+    var i = 0;
+    while (true) {
+        var colComp = AdfPage.PAGE.findComponent(clientIdArray[1] + ":" + i + clientIdArray[3]);
+        if (!colComp)
+            break;
+        colComp.setValue(globalLastVisitedField.getValue());
+        i++;
+    }
+    //while
+    evt.cancel();
 }
