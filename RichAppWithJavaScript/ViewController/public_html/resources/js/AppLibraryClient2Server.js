@@ -11,8 +11,22 @@ function helpCallListener(actionEvent) {
     actionEvent.noResponseExpected() ;
 }
 
+function qandaListener(actionEvent) {
+    var comp = actionEvent.getSource();
+    var country = comp.getValue();
 
+    AdfCustomEvent.queue(comp, "answerMe", 
+    {
+        "country" : country
+    },
+    true);
+    actionEvent.noResponseExpected() ;
+}
 
+function publishAnswer(answer) {
+    console.log("received answer: "+JSON.stringify(answer));
+    var capital = answer.answer;
+}
 
 var keyRegistry = new Array();
 keyRegistry.push("alt T");
