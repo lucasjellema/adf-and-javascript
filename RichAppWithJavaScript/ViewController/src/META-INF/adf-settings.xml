@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<adf-settings xmlns="http://xmlns.oracle.com/adf/settings"></adf-settings>
+<adf-settings xmlns="http://xmlns.oracle.com/adf/settings">
+    <adf-controller-setting xmlns="http://xmlns.oracle.com/adf/controller/config">
+        <lifecycle>
+            <phase-listener>
+                <listener-id>AfterPPRPhaseListener</listener-id>
+                <class>nl.amis.app.view.AfterPPRPhaseListener</class>
+            </phase-listener>
+        </lifecycle>
+    </adf-controller-setting>
+</adf-settings>

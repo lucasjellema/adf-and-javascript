@@ -3,6 +3,7 @@ function toUpper(event) {
     inputComp.setValue(inputComp.getSubmittedValue().toUpperCase());
 }
 
+
 function recalc(event) {
     var sourceComp = event.getCurrentTarget();
     var inputA = sourceComp.findComponent("numberFieldA");
@@ -50,27 +51,7 @@ function setFocusWhenValidateFail(event) {
     }
 }
 
-function convertSmartDate(event){
-var element = event.getSource();
-    var val = element.getValue();
-    element.setValue(null);
-       var cid = element.getClientId();
-    console.log("current value is "+val+ " for client id "+cid );
-}
-
-
-function addListener(elementId, type, functionRef) {
-    var el = document.getElementById(elementId);
-    el.addEventListener(type, functionRef, false);
-}
-
-function handleSmartDate(e) {
-    var elem = e.currentTarget;
-    console.log('smart date to handle in' + elem.id + ": " + elem.value);
-    elem.value = null;
-}
-
 
 function init(event) {
-  addListener("smartDate::content", "blur", handleSmartDate)
+//  addListener("smartDate::content", "blur", handleSmartDate)
 }

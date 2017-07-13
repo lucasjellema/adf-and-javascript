@@ -6,6 +6,12 @@
         <af:clientListener method="init" type="load"/>
         <af:serverListener type="refreshTimeListener" method="#{client2serverBean.refreshTime}"/>
         <af:form id="f1">
+        <af:inputText id="ppr" visible="false" clientComponent="true">
+           <af:clientListener type="propertyChange" method="signalPPR" />
+        </af:inputText>
+        <af:inputText id="ppr2" visible="true" clientComponent="true">
+           <af:clientListener type="propertyChange" method="signalPPR" />
+        </af:inputText>
             <af:panelGridLayout id="pgl1">
                 <af:gridRow height="150px" id="gr1">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">

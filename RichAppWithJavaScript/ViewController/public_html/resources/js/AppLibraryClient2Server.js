@@ -59,4 +59,17 @@ function callBack(keyCode) {
 
 function init(event) {
     registerKeyBoardHandler(event);
+      var ppr2 = AdfPage.PAGE.findComponentByAbsoluteId("ppr2");
+      if (ppr2) {
+         ppr2.setValue(1);
+      }
+}
+
+function notifyPPR() {
+    console.log("Completion of PPR request was signaled.");
+}
+
+function signalPPR(event) {
+    notifyPPR();
+    console.log("PPR identified through special inputText component with propertyChange listener");
 }
