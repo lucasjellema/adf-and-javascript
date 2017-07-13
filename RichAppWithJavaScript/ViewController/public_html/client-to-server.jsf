@@ -12,6 +12,9 @@
         <af:inputText id="ppr2" visible="true" clientComponent="true">
            <af:clientListener type="propertyChange" method="signalPPR" />
         </af:inputText>
+        <af:inputText id="styleMapping" visible="true" clientComponent="true" styleClass="longStyleClassName shorterClassName specialStyle" >
+           <af:clientAttribute name="styleClassNames"  value="longStyleClassName shorterClassName specialStyle" />
+        </af:inputText>
             <af:panelGridLayout id="pgl1">
                 <af:gridRow height="150px" id="gr1">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">

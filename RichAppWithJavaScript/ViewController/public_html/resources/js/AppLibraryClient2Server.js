@@ -8,7 +8,7 @@ function helpCallListener(actionEvent) {
         "helpTopic" : "the topic for help: " + topic
     },
     true);
-    actionEvent.noResponseExpected() ;
+    actionEvent.noResponseExpected();
 }
 
 function qandaListener(actionEvent) {
@@ -20,14 +20,14 @@ function qandaListener(actionEvent) {
         "country" : country
     },
     true);
-   // actionEvent.noResponseExpected() ;
+    // actionEvent.noResponseExpected() ;
 }
 
 function publishAnswer(answer) {
-    console.log("received answer: "+answer);
+    console.log("received answer: " + answer);
     var capital = JSON.parse(answer).answer;
-      var a2b= AdfPage.PAGE.findComponentByAbsoluteId("a2b");
-      a2b.setValue(capital);
+    var a2b = AdfPage.PAGE.findComponentByAbsoluteId("a2b");
+    a2b.setValue(capital);
 }
 
 var keyRegistry = new Array();
@@ -40,29 +40,46 @@ function registerKeyBoardHandler(event) {
     }
 }
 
-
 function callBack(keyCode) {
     var marshalledKeyCode = keyCode.toMarshalledString(keyCode);
     var refreshTime = marshalledKeyCode == "alt T";
     if (refreshTime) {
-    // find the document component with id = doc
-    var doc= AdfPage.PAGE.findComponentByAbsoluteId("doc");
-    
-    // trigger the refreshTimeListener server listener on the document component
-    AdfCustomEvent.queue(doc, "refreshTimeListener", 
-    {
-    },
-    false);
-        
+        // find the document component with id = doc
+        var doc = AdfPage.PAGE.findComponentByAbsoluteId("doc");
+
+        // trigger the refreshTimeListener server listener on the document component
+        AdfCustomEvent.queue(doc, "refreshTimeListener", 
+        {
+        },
+        false);
+
+    }
+}
+
+var styleClassMap = {
+};
+
+function prepareStyleClassMapping() {
+    var mapper = AdfPage.PAGE.findComponentByAbsoluteId("styleMapping");
+    // get client attribute styleClassNames
+    var styleClassNames = mapper.getProperty('styleClassNames');
+    // get styleClasses currently set on component
+    var styleClassesOnComponent = mapper.getStyleClass();
+    var fullNames = styleClassNames.split(' ');
+    var shortenedNames = styleClassesOnComponent.split(' ');
+    // populate the styleClassMap with all full style class names as the properties and the shortenedNames as the values  
+    for (var i = 0;i < fullNames.length;i++) {
+        styleClassMap[fullNames[i]] = shortenedNames[i];
     }
 }
 
 function init(event) {
     registerKeyBoardHandler(event);
-      var ppr2 = AdfPage.PAGE.findComponentByAbsoluteId("ppr2");
-      if (ppr2) {
-         ppr2.setValue(1);
-      }
+    var ppr2 = AdfPage.PAGE.findComponentByAbsoluteId("ppr2");
+    if (ppr2) {
+        ppr2.setValue(1);
+    }
+    prepareStyleClassMapping();
 }
 
 function notifyPPR() {
